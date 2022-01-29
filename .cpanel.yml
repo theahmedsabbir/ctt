@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/cttedu/public_html/
-    - /bin/cp -R . $DEPLOYPATH
