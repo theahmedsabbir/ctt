@@ -8672,7 +8672,7 @@ input.input-circled {
     transition: all 0.3s ease 0s;
 }
 .header.header-floating .header-nav .header-nav-wrapper {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: none;
 }
@@ -8785,4 +8785,5 @@ body.has-fixed-footer .main-content {
 /*custom*/
 .tp-mask-wrap{
   overflow: unset !important;
+  /*change*/
 }
