@@ -370,7 +370,7 @@
                 },
                 responsiveLevels:[1240,1024,778,480],
                 gridwidth:[1240,1024,778,480],
-                gridheight:[800,550,500,450],
+                gridheight:[700,550,500,450],
                 lazyType:"none",
                 parallax: {
                   type:"scroll",
@@ -401,6 +401,212 @@
         </script>
       <!-- END REVOLUTION SLIDER -->
 
+      </div>
+    </section>
+
+    {{-- about us --}}
+
+
+
+    <!-- Section: Courses -->
+    <section id="courses" class="bg-theme-white">
+      <marquee class="container-fluid marquee">
+      	<a class="" href="">There is no such alternative.</a>
+      	<a class="" href="">There is no such alternative.</a>
+      	<a class="" href="">There is no such alternative.</a>
+      	<a class="" href="">There is no such alternative.</a>
+      	<a class="" href="">There is no such alternative.</a>
+      </marquee>
+    </section>
+
+    <!-- Section: Courses -->
+    <section id="courses" class="bg-theme-white">
+      <div class="container pb-40">
+        <div class="section-title">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title">Popular <span class="text-theme-colored2">Courses</span></h2>              
+              <p class="text-uppercase mb-0">Choose Your Desired Course</p>
+					  	<div class="double-line-bottom-theme-colored-2"></div>
+						</div>
+          </div>
+        </div>
+        <div class="row mtli-row-clearfix">
+          <div class="owl-carousel-3col" data-nav="true">
+            <div class="item">
+              <div class="course-single-item bg-white border-1px clearfix mb-30">
+                <div class="course-thumb">
+                  <img class="img-fullwidth" alt="" src="images/course/sm1.jpg">
+                  <div class="price-tag">$290</div>
+                </div>
+                <div class="course-details clearfix p-20 pt-15">
+                  <div class="course-top-part pull-left mr-40">
+                    <a href="page-course-details.html"><h4 class="mt-0 mb-5">Nural Networking Course</h4></a>
+                    <ul class="list-inline">
+                      <li class="review-stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </li>
+                      <li>25 <i class="fa fa-comments-o text-theme-colored2"></i></li>
+                      <li>68 <i class="fa fa-thumbs-o-up text-theme-colored2"></i></li>
+                    </ul>
+                  </div>
+                  <div class="author-thumb">
+                    <img src="images/course/xs1.jpg" alt="" class="img-circle">
+                  </div>
+                  <div class="clearfix"></div>
+                  <p class="course-description mt-20">Lorem ipsum dolor sit amet, consec teturadipsi cing elit. Nobis commodi esse aliquam eligend reprehenderit, numquam a odio.</p>
+                  <ul class="list-inline course-meta mt-15">
+                    <li>
+                      <h6>4 year</h6>
+                      <span> Course</span>
+                    </li>
+                    <li>
+                      <h6>35</h6>
+                      <span> Class Size</span>
+                    </li>
+                    <li>
+                      <h6><span class="course-time">2 hours 30 min</span></h6>
+                      <span> Class Duration</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="course-single-item bg-white border-1px clearfix mb-30">
+                <div class="course-thumb">
+                  <img class="img-fullwidth" alt="" src="images/course/sm2.jpg">
+                  <div class="price-tag">$290</div>
+                </div>
+                <div class="course-details clearfix p-20 pt-15">
+                  <div class="course-top-part pull-left mr-40">
+                    <a href="page-course-details.html"><a href="page-course-details.html"><h4 class="mt-0 mb-5">Nural Networking Course</h4></a></a>
+                    <ul class="list-inline">
+                      <li class="review-stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                      </li>
+                      <li>25 <i class="fa fa-comments-o text-theme-colored2"></i></li>
+                      <li>68 <i class="fa fa-thumbs-o-up text-theme-colored2"></i></li>
+                    </ul>
+                  </div>
+                  <div class="author-thumb">
+                    <img src="images/course/xs2.jpg" alt="" class="img-circle">
+                  </div>
+                  <div class="clearfix"></div>
+                  <p class="course-description mt-20">Lorem ipsum dolor sit amet, consec teturadipsi cing elit. Nobis commodi esse aliquam eligend reprehenderit, numquam a odio.</p>
+                  <ul class="list-inline course-meta mt-15">
+                    <li>
+                      <h6>3 year</h6>
+                      <span> Course</span>
+                    </li>
+                    <li>
+                      <h6>20</h6>
+                      <span> Class Size</span>
+                    </li>
+                    <li>
+                      <h6><span class="course-time">1 hour 45 min</span></h6>
+                      <span> Class Duration</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="course-single-item bg-white border-1px clearfix mb-30">
+                <div class="course-thumb">
+                  <img class="img-fullwidth" alt="" src="images/course/sm3.jpg">
+                  <div class="price-tag">Free</div>
+                </div>
+                <div class="course-details clearfix p-20 pt-15">
+                  <div class="course-top-part pull-left mr-40">
+                    <a href="page-course-details.html"><h4 class="mt-0 mb-5">Nural Networking Course</h4></a>
+                    <ul class="list-inline">
+                      <li class="review-stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </li>
+                      <li>25 <i class="fa fa-comments-o text-theme-colored2"></i></li>
+                      <li>68 <i class="fa fa-thumbs-o-up text-theme-colored2"></i></li>
+                    </ul>
+                  </div>
+                  <div class="author-thumb">
+                    <img src="images/course/xs3.jpg" alt="" class="img-circle">
+                  </div>
+                  <div class="clearfix"></div>
+                  <p class="course-description mt-20">Lorem ipsum dolor sit amet, consec teturadipsi cing elit. Nobis commodi esse aliquam eligend reprehenderit, numquam a odio.</p>
+                  <ul class="list-inline course-meta mt-15">
+                    <li>
+                      <h6>2 year</h6>
+                      <span> Course</span>
+                    </li>
+                    <li>
+                      <h6>30</h6>
+                      <span> Class Size</span>
+                    </li>
+                    <li>
+                      <h6><span class="course-time">2 hours 30 min</span></h6>
+                      <span> Class Duration</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="course-single-item bg-white border-1px clearfix mb-30">
+                <div class="course-thumb">
+                  <img class="img-fullwidth" alt="" src="images/course/sm4.jpg">
+                  <div class="price-tag">$290</div>
+                </div>
+                <div class="course-details clearfix p-20 pt-15">
+                  <div class="course-top-part pull-left mr-40">
+                    <a href="page-course-details.html"><h4 class="mt-0 mb-5">Nural Networking Course</h4></a>
+                    <ul class="list-inline">
+                      <li class="review-stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                      </li>
+                      <li>25 <i class="fa fa-comments-o text-theme-colored2"></i></li>
+                      <li>68 <i class="fa fa-thumbs-o-up text-theme-colored2"></i></li>
+                    </ul>
+                  </div>
+                  <div class="author-thumb">
+                    <img src="images/course/xs1.jpg" alt="" class="img-circle">
+                  </div>
+                  <div class="clearfix"></div>
+                  <p class="course-description mt-20">Lorem ipsum dolor sit amet, consec teturadipsi cing elit. Nobis commodi esse aliquam eligend reprehenderit, numquam a odio.</p>
+                  <ul class="list-inline course-meta mt-15">
+                    <li>
+                      <h6>1 year</h6>
+                      <span> Course</span>
+                    </li>
+                    <li>
+                      <h6>45</h6>
+                      <span> Class Size</span>
+                    </li>
+                    <li>
+                      <h6><span class="course-time">3 hours 20 min</span></h6>
+                      <span> Class Duration</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 </div>
