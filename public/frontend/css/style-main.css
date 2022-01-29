@@ -8806,4 +8806,69 @@ body.has-fixed-footer .main-content {
 }
 
 /*course section*/
+.aboutUs {
+    padding-bottom: 80px;
+}
+.aboutUs .section-title{}
+.aboutUs .section-title .title{
+    color: #333333 !i;
+}
+.aboutUs .section-title .text-uppercase{}
+.aboutUs .section-title .line{
+    max-width: 83px;
+    /* height: 2px; */
+}
+.aboutUs .left {}
+.aboutUs .left p{
+    font-size: 15px;
+    text-transform: uppercase;
+}
 
+.aboutUs .right {
+    padding: 0 15%;
+}
+.aboutUs .right img {
+    background: #FFFFFF;
+    box-shadow: 0px -2px 97px rgba(0, 0, 0, 0.07), 0px -0.730033px 35.4066px rgba(0, 0, 0, 0.0406134), 0px -0.354417px 17.1892px rgba(0, 0, 0, 0.0253382), 0px -0.173742px 8.42649px rgba(0, 0, 0, 0.0141364), 0px -0.0686979px 3.33185px rgba(0, 0, 0, 0.00567006);
+    border-radius: 50%;
+    padding: 8%;
+}
+
+
+
+
+/*course section*/
+.chairman {
+    /* border-top:1px solid red; */
+    padding-bottom: 80px;
+}
+.chairman .section-title{}
+.chairman .section-title .title{
+    color: #333333 !i;
+}
+.chairman .section-title .text-uppercase{}
+.chairman .section-title .line{
+    max-width: 83px;
+    /* height: 2px; */
+}
+.chairman .left {}
+.chairman .left p{
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.chairman .left .name{
+    margin: 0;
+    text-transform: uppercase;
+    color: #094219;
+    font-size: 22px;
+    font-weight: 600;
+}
+.chairman .left .title{
+    margin: 0;
+    margin-top: 6px;
+    text-transform: uppercase;
+}
+
+.chairman .right {padding-left: 13px;}
+.chairman .right img {
+}
