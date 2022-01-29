@@ -8790,7 +8790,7 @@ body.has-fixed-footer .main-content {
 
 .marquee{
     padding-top: 26px !important;
-    padding-bottom: unset !important;
+    padding-bottom: 10px !important;
     /*white-space: nowrap;*/
 }
 .marquee a{
