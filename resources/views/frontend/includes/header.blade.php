@@ -10,7 +10,7 @@
                                 </a>
                                 <ul class="menuzord-menu">
                                     <li class="active">
-                                        <a href="{{ url('/') }}">Home</a>
+                                        <a href="{{ url('/') }}">Home1</a>
                                     </li>
                                     <li class="">
                                         <a href="#">About Us</a>
