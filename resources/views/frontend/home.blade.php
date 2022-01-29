@@ -86,7 +86,7 @@
                   style="z-index: 5; white-space: nowrap;margin-top:32px;">Get The <span style="color:#41FF6B">Best Training</span> To <br><span style="line-height: 100px;">Start <span style="color: #FEFF41">Career</span></span>
                 </div>
                 <!-- LAYER NR. 4 -->
-{{--                 <div class="tp-caption rs-parallaxlevel-0" 
+                <div class="tp-caption rs-parallaxlevel-0" 
                   id="slide-1-layer-5" 
                   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
                   data-y="['top','top','top','top']" data-voffset="['350','330','290','290']" 
@@ -110,7 +110,7 @@
                   		<input type="text" class="" placeholder="Search here...">
                   		<button type="submit">Search</button>
                   	</form>
-                </div> --}}
+                </div>
               </li>
 
               <!-- SLIDE 2 -->
