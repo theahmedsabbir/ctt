@@ -19,27 +19,27 @@
                                         <a href="#">Administration</a>
                                         <ul class="dropdown">
                                             <li>
-                                                <a href="/administrative">Administrative</a>
+                                                <a href="{{ url('administrative') }}">Administrative</a>
                                             </li>
                                             <li>
-                                                <a href="/faculty">Faculty Members</a>
+                                                <a href="{{ url('faculty') }}">Faculty Members</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="">
-                                        <a href="academic">Academic</a>
+                                        <a href="{{ url('academic') }}">Academic</a>
                                     </li>
                                     <li class="">
-                                        <a href="department">Department</a>
+                                        <a href="{{ url('department') }}">Department</a>
                                     </li>
                                     <li class="">
-                                        <a href="admission">Admission</a>
+                                        <a href="{{ url('admission') }}">Admission</a>
                                     </li>
                                     <li class="">
-                                        <a href="gallery">Gallery</a>
+                                        <a href="{{ url('gallery') }}">Gallery</a>
                                     </li>
                                     <li class="">
-                                        <a href="contact">Contact</a>
+                                        <a href="{{ url('contact') }}">Contact</a>
                                     </li>
                                     <li class="last-header-menu">
                                         <a href="#">Login/Sign Up</a>
