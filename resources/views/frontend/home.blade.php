@@ -454,6 +454,90 @@
       </div>
     </section>
 
+    <section id="courses" class="why-ctt">
+        <div class="container pb-40">
+          <div class="section-title">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="why-should">Why Should You Choose CTT ?</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row mtli-row-clearfix mt-ctt-l">
+              <div class="col-md-12">
+                  <div class="row">
+                        <div class="col-md-4">
+                            <div class="round">
+                                <img src="{{ asset('/frontend/images/Vector.png') }}" class="ctt-img" />
+                            </div>
+                            <div class="export">Expert</div>
+                            <span class="export">Instructors</span>
+                            <p class="">
+                                Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="round">
+                                <img src="{{ asset('/frontend/images/Vector (1).png') }}" class="ctt-img1" />
+                            </div>
+                            <div class="export">Popular</div>
+                            <span class="export" style="margin-left: 39px;">Courses</span>
+                            <p class="">
+                                Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="round" style="margin-left: 30px;">
+                                <img src="{{ asset('/frontend/images/Vector (2).png') }}" class="ctt-img2" />
+                            </div>
+                                <div class="export-3">Modern</div>
+                                <span class="export-33" style="margin-left: 61px;">Laboratory</span>
+                                <p class="export-333">
+                                    Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
+                                </p>
+                            </div>
+                        </div>
+                  </div>
+              </div>
+              <div class="col-md-12" style="margin-left: 85px;">
+                <div class="row">
+                      <div class="col-md-4">
+                          <div class="round">
+                              <img src="{{ asset('/frontend/images/Vector (3).png') }}" class="ctt-img3" />
+                          </div>
+                          <div class="export">Hostel</div>
+                          <span class="export" style="margin-left: 39px;">Facilites</span>
+                          <p class="">
+                              Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
+                          </p>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="round">
+                              <img src="{{ asset('/frontend/images/Vector (4).png') }}" class="ctt-img4" />
+                          </div>
+                          <div class="export">Popular</div>
+                          <span class="export" style="margin-left: 39px;">Courses</span>
+                          <p class="">
+                              Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
+                          </p>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="round">
+                              <img src="{{ asset('/frontend/images/Vector (5).png') }}" class="ctt-img5" />
+                          </div>
+                              <div class="export" style="margin-left: 60px;">Job</div>
+                              <span class="export">Opportunities</span>
+                              <p class="">
+                                  Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
+                              </p>
+                          </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
 
     <!-- Section: chairman -->
