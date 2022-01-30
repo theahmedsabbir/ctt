@@ -16,7 +16,15 @@
                                         <a href="{{ url('/about-us') }}">About Us</a>
                                     </li>
                                     <li class="">
-                                        <a href="administration">Administration</a>
+                                        <a href="#">Administration</a>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="/administrative">Administrative</a>
+                                            </li>
+                                            <li>
+                                                <a href="/faculty">Faculty Members</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="">
                                         <a href="academic">Academic</a>

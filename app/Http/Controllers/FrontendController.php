@@ -19,8 +19,11 @@ class FrontendController extends Controller
     public function contact(){
         return view('frontend.contact');
     }
-    public function administration(){
-        return view('frontend.administration');
+    public function administrative(){
+        return view('frontend.administrative');
+    }
+    public function faculty(){
+        return view('frontend.faculty');
     }
     public function academic(){
         return view('frontend.academic');

@@ -5,10 +5,10 @@
         <div class="section-content">
           <div class="row"> 
             <div class="col-md-6">
-              <h2 class="text-white font-36">{{ $title }}</h2>
+              <h2 class="text-white font-36" style="">{{ $title }}</h2>
               <ol class="breadcrumb text-left mt-10 white">
                 <li><a href="#">Home</a></li>
-                <li class="text-white">{{ $breadcrumb }}</li>
+                <li class="text-white" style="">{{ $breadcrumb }}</li>
               </ol>
             </div>
           </div>
