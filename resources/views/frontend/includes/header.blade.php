@@ -16,19 +16,19 @@
                                         <a href="{{ url('/about-us') }}">About Us</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">Administration</a>
+                                        <a href="administration">Administration</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">Academic</a>
+                                        <a href="academic">Academic</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">Department</a>
+                                        <a href="department">Department</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">Admission</a>
+                                        <a href="admission">Admission</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">Gallery</a>
+                                        <a href="gallery">Gallery</a>
                                     </li>
                                     <li class="">
                                         <a href="contact">Contact</a>

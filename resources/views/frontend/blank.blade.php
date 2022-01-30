@@ -9,6 +9,11 @@
 
 <div class="main-content">
 
+    <!-- Section: inner-header -->
+    @include('frontend.includes.inner-header', ['title' => 'Contact Us', 'breadcrumb' => 'Contact'])
+
+
+    
 
 </div>
 
