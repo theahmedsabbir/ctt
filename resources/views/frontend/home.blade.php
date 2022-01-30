@@ -86,7 +86,7 @@
                   style="z-index: 5; white-space: nowrap;margin-top:32px;">Get The <span style="color:#41FF6B">Best Training</span> To <br><span style="line-height: 100px;">Start <span style="color: #FEFF41">Career</span></span>
                 </div>
                 <!-- LAYER NR. 4 -->
-                <div class="tp-caption rs-parallaxlevel-0" 
+{{--                 <div class="tp-caption rs-parallaxlevel-0" 
                   id="slide-1-layer-5" 
                   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
                   data-y="['top','top','top','top']" data-voffset="['350','330','290','290']" 
@@ -110,7 +110,7 @@
                   		<input type="text" class="" placeholder="Search here...">
                   		<button type="submit">Search</button>
                   	</form>
-                </div>
+                </div> --}}
               </li>
 
               <!-- SLIDE 2 -->
@@ -370,7 +370,7 @@
                 },
                 responsiveLevels:[1240,1024,778,480],
                 gridwidth:[1240,1024,778,480],
-                gridheight:[800,550,500,450],
+                gridheight:[700,550,500,450],
                 lazyType:"none",
                 parallax: {
                   type:"scroll",
@@ -403,7 +403,156 @@
 
       </div>
     </section>
+
+    {{-- about us --}}
+
+
+
+    <!-- Section: marquee -->
+    <section id="courses" class="bg-theme-white">
+      <marquee class="container-fluid marquee">
+      	<a class="" href="">There is no such alternative.</a>
+      	<a class="" href="">There is no such alternative.</a>
+      	<a class="" href="">There is no such alternative.</a>
+      	<a class="" href="">There is no such alternative.</a>
+      	<a class="" href="">There is no such alternative.</a>
+      </marquee>
+    </section>
+
+    <!-- Section: about us -->
+    <section id="courses" class="aboutUs">
+      <div class="container pb-40">
+        <div class="section-title">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title">ABOUT CTT</h2>              
+              <p class="text-uppercase mb-0">OUR HISTORY & PRESENT</p>
+			  <img src="{{ asset('frontend/images/line.png') }}" alt="" class="line">	
+			</div>
+          </div>
+        </div>
+        <div class="row mtli-row-clearfix">
+        	<div class="col-md-8">
+        		<div class="left">
+        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+        			<br>
+        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+        		</div>
+        	</div>
+        	<div class="col-md-4">
+        		<div class="right">
+        			<img src="{{ asset('frontend/images/logo-round.png') }}" alt="" class="img-fluid">
+        		</div>
+        	</div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Section: chairman -->
+    <section id="courses" class="chairman">
+      <div class="container">
+        <div class="section-title">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title">CHAIRMAN’S MESSAGE</h2>              
+              <p class="text-uppercase mb-0">MESSAGE FROM OUR HONOURABLE CHAIRMAN</p>
+			  <img src="{{ asset('frontend/images/line.png') }}" alt="" class="line">	
+			</div>
+          </div>
+        </div>
+
+
+        <div class="row mtli-row-clearfix">
+            <div class="owl-carousel-1col" data-dot="false">
+                <div class="item">
+		        	<div class="col-md-4">
+		        		<div class="left">
+		        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+		        			<br>
+		        			<h3 class="name">Mohammad Abu Nasir</h3>
+		        			<h3 class="title">PhD <br>Chairman</h3>
+		        		</div>
+		        	</div>
+		        	<div class="col-md-8">
+		        		<div class="right">
+		        			<img src="{{ asset('frontend/images/chairman.png') }}" alt="" class="img-fluid">
+		        		</div>
+		        	</div>
+                </div>
+{{--                 <div class="item">
+                    <div class="course-single-item style2 text-center mb-40">
+                        <div class="course-thumb">
+                            <img class="img-fullwidth" alt="" src="images/course/sm2.jpg" />
+                            <div class="price-tag">$460</div>
+                        </div>
+                        <div class="course-details border-1px clearfix p-15 pt-15">
+                            <div class="course-top-part">
+                                <a href="page-course-details.html"><h4 class="line-bottom-centered mt-20 mb-30">Nural Networking Course</h4></a>
+                            </div>
+                            <div class="author-thumb">
+                                <img src="images/course/xs3.jpg" width="54" alt="" class="img-circle img-thumbnail" />
+                            </div>
+                            <p class="course-description mt-5">Lorem ipsum dolor sit amet, consec teturadipsi cing elit. Nobis commodi esse aliquam eligend repreh</p>
+                        </div>
+                        <div class="course-meta bg-silver-deep">
+                            <ul class="list-inline">
+                                <li><i class="fa fa-calendar text-theme-colored2 mr-5"></i>3 hours</li>
+                                <li><i class="fa fa-book text-theme-colored2 mr-5"></i>18 Lessons</li>
+                                <li><i class="fa fa-clock-o text-theme-colored2 mr-5"></i>34 Seats</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+      </div>
+    </section>
+
+    {{-- number section --}}
+    <section class="parallax layer-overlay overlay-theme-colored-9 number" data-bg-img="images/bg/bg1.jpg" data-parallax-ratio="0.4">
+        <div class="container pt-70 pb-90">
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+                        <div class="funfact text-center">
+                            <div class="odometer-animate-number text-white font-weight-600 font-48" data-value="5100" data-theme="minimal">0</div>
+                            <div class="double-line-bottom-centered-theme-colored-2 mt-0 mb-25"></div>
+                            <h5 class="text-white text-uppercase mb-0">Happy Students</h5>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+                        <div class="funfact text-center">
+                            <div class="odometer-animate-number text-white font-weight-600 font-48" data-value="200" data-theme="minimal">0</div>
+                            <div class="double-line-bottom-centered-theme-colored-2 mt-0 mb-25"></div>
+                            <h5 class="text-white text-uppercase mb-0">Approved Courses</h5>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+                        <div class="funfact text-center">
+                            <div class="odometer-animate-number text-white font-weight-600 font-48" data-value="20" data-theme="minimal">0</div>
+                            <div class="double-line-bottom-centered-theme-colored-2 mt-0 mb-25"></div>
+                            <h5 class="text-white text-uppercase mb-0">Certified Teachers</h5>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 mb-md-0">
+                        <div class="funfact text-center">
+                            <div class="odometer-animate-number text-white font-weight-600 font-48" data-value="600" data-theme="minimal">0</div>
+                            <div class="double-line-bottom-centered-theme-colored-2 mt-0 mb-25"></div>
+                            <h5 class="text-white text-uppercase mb-0">Graduate Students</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 </div>
+
+
 
 
 
