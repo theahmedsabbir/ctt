@@ -68,6 +68,7 @@ Route::group(['middleware' => ['admin']], function(){
 // frontend routes
 Route::get('/', 'FrontendController@home');
 Route::get('/about-us', 'FrontendController@aboutUs');
+Route::get('/contact', 'FrontendController@contact');
 
 
 Auth::routes();

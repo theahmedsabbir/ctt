@@ -31,7 +31,7 @@
                                         <a href="#">Gallery</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">Contact</a>
+                                        <a href="contact">Contact</a>
                                     </li>
                                     <li class="last-header-menu">
                                         <a href="#">Login/Sign Up</a>
