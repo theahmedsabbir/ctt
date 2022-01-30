@@ -32,6 +32,7 @@
 
         <!-- CSS | Theme Color -->
         <link href="{{ asset('frontend') }}/css/colors/theme-skin-color-set1.css" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('frontend') }}/css/style.css" rel="stylesheet" type="text/css" />
 
         <!-- external javascripts -->
         <script src="{{asset('frontend')}}/js/jquery-2.2.4.min.js"></script>

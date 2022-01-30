@@ -1,0 +1,19 @@
+.searchbtn{
+    position: relative;
+    padding: 6px;
+    width: 90px;
+    margin-left: 368px;
+    border-radius: 17px;
+    border: none;
+    background-color: #094219;
+    color: white;
+    margin-top: 2px;
+}
+
+.searchInput{
+    position: absolute;
+    padding: 8px;
+    width: 460px;
+    border-radius: 24px;
+    border: none;
+}
