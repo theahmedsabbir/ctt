@@ -31,7 +31,7 @@
 
 
     <!-- Section:AT A GLANCE -->
-    <section id="courses" class="aboutUs atAGlance">
+    <section id="courses" class="aboutUs atAGlance text-justify">
       <div class="container pb-40">
         <div class="section-title">
           <div class="row">
@@ -60,11 +60,12 @@
     </section>
 
     <!-- Section:AT A GLANCE -->
-    <section id="courses" class="history">
+    <section id="courses" class="history text-justify">
       <div class="container pb-40">
         <div class="section-title">
           <div class="row">
-            <div class="col-md-12">
+          	<div class="col-md-6">&nbsp;</div>
+            <div class="col-md-6">
               <h2 class="text-uppercase title">HISTORY OF CTT</h2>              
               <p class="text-uppercase mb-0">OUR HISTORY IN A BRIEF</p>
 			  <img src="{{ asset('frontend/images/line.png') }}" alt="" class="line">	
@@ -82,6 +83,58 @@
         		<div class="left">
         			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
         			<br>
+        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+        		</div>
+        	</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Why study -->
+    <section id="courses" class="aboutUs atAGlance text-justify">
+      <div class="container pb-40">
+        <div class="section-title text-left">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title">Why Study</h2>              
+              <p class="text-uppercase mb-0">WHY STUDY AT CTT</p>
+			  <img src="{{ asset('frontend/images/line.png') }}" alt="" class="line">	
+			</div>
+          </div>
+        </div>
+        <div class="row mtli-row-clearfix">
+        	<div class="col-md-12">
+        		<div class="left text-justify">
+        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+        			<br>
+        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+        		</div>
+        	</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- MISSION AND VISSION -->
+    <section id="courses" class="aboutUs atAGlance text-justify" style="background: #F9F9F6;">
+      <div class="container pb-40">
+        <div class="section-title text-left">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="text-uppercase title">Mission and Vision</h2>              
+              <p class="text-uppercase mb-0">ABOUT OUR Mission and Vision</p>
+			  <img src="{{ asset('frontend/images/line.png') }}" alt="" class="line">	
+			</div>
+          </div>
+        </div>
+        <div class="row mtli-row-clearfix">
+        	<div class="col-md-12">
+        		<div class="left text-justify">
+        			<h2>Mission</h2>
+        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+        			<br>
+        			<h2>Vision</h2>
         			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
         		</div>
         	</div>
