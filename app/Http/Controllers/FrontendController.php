@@ -13,4 +13,28 @@ class FrontendController extends Controller
     public function home(){
         return view('frontend.home');
     }
+    public function aboutUs(){
+        return view('frontend.aboutUs');
+    }
+    public function contact(){
+        return view('frontend.contact');
+    }
+    public function administrative(){
+        return view('frontend.administrative');
+    }
+    public function faculty(){
+        return view('frontend.faculty');
+    }
+    public function academic(){
+        return view('frontend.academic');
+    }
+    public function department(){
+        return view('frontend.department');
+    }
+    public function admission(){
+        return view('frontend.admission');
+    }
+    public function gallery(){
+        return view('frontend.gallery');
+    }
 }

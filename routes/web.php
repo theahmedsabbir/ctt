@@ -67,6 +67,14 @@ Route::group(['middleware' => ['admin']], function(){
 
 // frontend routes
 Route::get('/', 'FrontendController@home');
+Route::get('/about-us', 'FrontendController@aboutUs');
+Route::get('/contact', 'FrontendController@contact');
+Route::get('/administrative', 'FrontendController@administrative');
+Route::get('/faculty', 'FrontendController@faculty');
+Route::get('/academic', 'FrontendController@academic');
+Route::get('/department', 'FrontendController@department');
+Route::get('/admission', 'FrontendController@admission');
+Route::get('/gallery', 'FrontendController@gallery');
 
 
 Auth::routes();

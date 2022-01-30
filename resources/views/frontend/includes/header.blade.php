@@ -13,28 +13,33 @@
                                         <a href="{{ url('/') }}">Home</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">About Us</a>
-                                    </li>
-                                    <li class="">
-                                        <a href="#">About</a>
+                                        <a href="{{ url('/about-us') }}">About Us</a>
                                     </li>
                                     <li class="">
                                         <a href="#">Administration</a>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="{{ url('administrative') }}">Administrative</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('faculty') }}">Faculty Members</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="#">Academic</a>
+                                        <a href="{{ url('academic') }}">Academic</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">Department</a>
+                                        <a href="{{ url('department') }}">Department</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">Admission</a>
+                                        <a href="{{ url('admission') }}">Admission</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">Gallery</a>
+                                        <a href="{{ url('gallery') }}">Gallery</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">Contact</a>
+                                        <a href="{{ url('contact') }}">Contact</a>
                                     </li>
                                     <li class="last-header-menu">
                                         <a href="#">Login/Sign Up</a>
