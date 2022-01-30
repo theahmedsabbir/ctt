@@ -13,10 +13,7 @@
                                         <a href="{{ url('/') }}">Home</a>
                                     </li>
                                     <li class="">
-                                        <a href="#">About Us</a>
-                                    </li>
-                                    <li class="">
-                                        <a href="#">About</a>
+                                        <a href="{{ url('/about-us') }}">About Us</a>
                                     </li>
                                     <li class="">
                                         <a href="#">Administration</a>

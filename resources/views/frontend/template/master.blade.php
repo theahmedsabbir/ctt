@@ -13,6 +13,9 @@
 
         <!-- CSS here -->
         @include('frontend.includes.css')
+
+        <!-- custom css -->
+        @yield('page-css')
     </head>
     <body class="">
         <div id="wrapper" class="clearfix">
@@ -32,6 +35,9 @@
 
         <!-- Footer Scripts -->
         @include('frontend.includes.scripts')
+
+        <!-- Custom js here -->
+        @yield('page-js')
     </body>
 
 </html>
