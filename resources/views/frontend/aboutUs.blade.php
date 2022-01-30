@@ -60,7 +60,7 @@
     </section>
 
     <!-- Section:AT A GLANCE -->
-    <section id="courses" class="history text-justify">
+    <section id="courses" class="History text-justify">
       <div class="container pb-40">
         <div class="section-title">
           <div class="row">

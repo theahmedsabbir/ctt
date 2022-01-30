@@ -8876,29 +8876,29 @@ body.has-fixed-footer .main-content {
 
 
 /*course section*/
-.history {
+.History {
     padding-bottom: 80px;
     background: #F9F9F6;
 }
-.history .section-title{}
-.history .section-title .title{
+.History .section-title{}
+.History .section-title .title{
     color: #333333 !i;
 }
-.history .section-title .text-uppercase{}
-.history .section-title .line{
+.History .section-title .text-uppercase{}
+.History .section-title .line{
     max-width: 83px;
     /* height: 2px; */
 }
-.history .left {}
-.history .left p{
+.History .left {}
+.History .left p{
     font-size: 15px;
     text-transform: uppercase;
 }
 
-.history .right {
+.History .right {
     /* padding: 0 15%; */
 }
-.history .right img {
+.History .right img {
     background: #FFFFFF;
     box-shadow: 0px -2px 97px rgba(0, 0, 0, 0.07), 0px -0.730033px 35.4066px rgba(0, 0, 0, 0.0406134), 0px -0.354417px 17.1892px rgba(0, 0, 0, 0.0253382), 0px -0.173742px 8.42649px rgba(0, 0, 0, 0.0141364), 0px -0.0686979px 3.33185px rgba(0, 0, 0, 0.00567006);
     /* border-radius: 50%; */
