@@ -539,6 +539,67 @@
       </section>
 
 
+      <section id="technology" class="">
+        <div class="container">
+          <div class="row mtli-row-clearfix">
+              <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-4 computer">
+                        <a href="#">
+                            <img src="{{ asset('frontend/images/23090163.png') }}" alt="" class="image" style="border-radius: 10px;">
+                            <div class="middle">
+                                <div class="text">Computer Technology</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 electrical">
+                        <a href="#">
+                            <img src="{{ asset('frontend/images/Electrical lab2 1.png') }}" alt="" class="image" style="border-radius: 10px;">
+                            <div class="middle">
+                                <div class="text">Electrical Technology</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 civil">
+                        <a href="#">
+                        <img src="{{ asset('frontend/images/20191102_110304.png') }}" alt="" class="image" style="border-radius: 10px;">
+                        <div class="middle">
+                            <div class="text">Civil Technology</div>
+                        </div>
+                        </a>
+                    </div>
+                  </div>
+                  <div class="row" style="margin-top: 25px;">
+                    <div class="col-md-4 power">
+                        <a href="#">
+                            <img src="{{ asset('frontend/images/23090144.png') }}" alt="" class="image" style="border-radius: 10px;">
+                            <div class="middle">
+                                <div class="text">Power Technology</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 machanical">
+                        <a href="#">
+                        <img src="{{ asset('frontend/images/Machanical lab 1.png') }}" alt="" class="image" style="border-radius: 10px;">
+                        <div class="middle">
+                            <div class="text">Machanical Technology</div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 taxtile">
+                        <a href="#">
+                        <img src="{{ asset('frontend/images/Machanical lab 1.png') }}" alt="" class="image" style="border-radius: 10px;">
+                        <div class="middle">
+                            <div class="text">Taxtile Technology</div>
+                        </div>
+                        </a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </section>
+
 
     <!-- Section: chairman -->
     <section id="courses" class="chairman">
@@ -600,6 +661,51 @@
       </div>
     </section>
 
+    <section id="courses" class="chairman">
+        <div class="container">
+          <div class="section-title">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="text-uppercase title">OUR ACHIEVEMENTS</h2>
+                <p class="text-uppercase mb-0">OUR ACHIEVEMENTS & FAME</p>
+                <img src="{{ asset('frontend/images/line.png') }}" alt="" class="line">
+              </div>
+            </div>
+          </div>
+
+          <div class="row mtli-row-clearfix">
+              <div class="owl-carousel-1col" data-dot="false">
+                  <div class="item">
+                      <div class="col-md-6">
+                          <div class="left">
+                              <img src="{{ asset('frontend/images/achivement.png') }}" alt="" class="img-fluid">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="right">
+                              <h2 style="font-size: 22px;">BEST INSTITUTION FOR ENGINEERING DIPLOMA</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item">
+                    <div class="col-md-6">
+                        <div class="left">
+                            <img src="{{ asset('frontend/images/slider1.png') }}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="right">
+                            <h2 style="font-size: 22px;">BEST INSTITUTION FOR ENGINEERING DIPLOMA</h2>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
     {{-- number section --}}
     <section class="parallax layer-overlay overlay-theme-colored-9 number" data-bg-img="images/bg/bg1.jpg" data-parallax-ratio="0.4">
         <div class="container pt-70 pb-90">
@@ -637,15 +743,7 @@
             </div>
         </div>
     </section>
-
-
-
 </div>
-
-
-
-
-
 @endsection
 
 @section('page-js')

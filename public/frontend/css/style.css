@@ -121,3 +121,81 @@ p.export-font{
     text-align: center;
     margin-left: -134px;
 }
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    position:relative;
+  }
+
+  .middle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background:black;
+  }
+
+  .computer:hover .image {
+    opacity: 0.3;
+  }
+
+  .computer:hover .middle {
+    opacity: 1;
+  }
+  .electrical:hover .image {
+    opacity: 0.3;
+  }
+
+  .electrical:hover .middle {
+    opacity: 1;
+  }
+
+  .civil:hover .image {
+    opacity: 0.3;
+  }
+
+  .civil:hover .middle {
+    opacity: 1;
+  }
+  .power:hover .image {
+    opacity: 0.3;
+  }
+
+  .power:hover .middle {
+    opacity: 1;
+  }
+  .machanical:hover .image {
+    opacity: 0.3;
+  }
+
+  .machanical:hover .middle {
+    opacity: 1;
+  }
+  .taxtile:hover .image {
+    opacity: 0.3;
+  }
+
+  .taxtile:hover .middle {
+    opacity: 1;
+  }
+
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
