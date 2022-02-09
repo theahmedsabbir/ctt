@@ -76,6 +76,8 @@ Route::get('/department', 'FrontendController@department');
 Route::get('/admission', 'FrontendController@admission');
 Route::get('/gallery', 'FrontendController@gallery');
 
+// templates for dynamic cairo_pattern_get_surface(pattern)
+Route::get('/notice', function() { return view('frontend.notice');});
 
 Auth::routes();
 

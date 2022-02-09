@@ -417,11 +417,11 @@
     <!-- Section: marquee -->
     <section id="courses" class="bg-theme-white">
       <marquee class="container-fluid marquee">
-      	<a class="" href="">There is no such alternative.</a>
-      	<a class="" href="">There is no such alternative.</a>
-      	<a class="" href="">There is no such alternative.</a>
-      	<a class="" href="">There is no such alternative.</a>
-      	<a class="" href="">There is no such alternative.</a>
+      	<a class="" href="{{ url('/notice') }}">There is no such alternative.</a>
+      	<a class="" href="{{ url('/notice') }}">There is no such alternative.</a>
+      	<a class="" href="{{ url('/notice') }}">There is no such alternative.</a>
+      	<a class="" href="{{ url('/notice') }}">There is no such alternative.</a>
+      	<a class="" href="{{ url('/notice') }}">There is no such alternative.</a>
       </marquee>
     </section>
 
