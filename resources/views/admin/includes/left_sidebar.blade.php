@@ -16,19 +16,11 @@
 
         {{-- get the role and permission array --}}
         @php
-<<<<<<< HEAD
           $role = App\Models\Role::where('slug', Session::get('admin_role'))->first(); // ei admin er data
           $role_permissions = [];
           if($role != null && $role->permissions != null){
             $role_permissions = json_decode($role->permissions); // ei admin er ei roler permission ki ki
           }
-=======
-          // $role = App\Models\Role::where('slug', Session::get('admin_role'))->first(); // ei admin er data
-          // $role_permissions = [];
-          // if($role != null && $role->permissions != null){
-          //   $role_permissions = json_decode($role->permissions); // ei admin er ei roler permission ki ki 
-          // }
->>>>>>> c855d384eb2a97c4fe68ef25ff2a1a277041b344
           // dd($role->permissions);
           // dd($role_permissions);
         @endphp
@@ -57,7 +49,6 @@
 
             </ul>
           </li>
-<<<<<<< HEAD
         @endif
 
         {{-- users --}}
@@ -419,9 +410,6 @@
 
           </ul>
         </li> --}}
-=======
-        {{-- @endif --}}
->>>>>>> c855d384eb2a97c4fe68ef25ff2a1a277041b344
       </ul><!-- br-sideleft-menu -->
 
 
