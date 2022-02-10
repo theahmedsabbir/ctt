@@ -7,7 +7,7 @@
       <div class="br-header-right">
         <nav class="nav">
           @php
-            $admin = App\Models\Admin::find(Session::get('admin_id'));
+            $admin = App\Models\User::find(Session::get('admin_id'));
 
 
           @endphp

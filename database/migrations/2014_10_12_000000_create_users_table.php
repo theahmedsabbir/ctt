@@ -18,11 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->unsignedBigInteger('role_id');
             $table->string('email')->unique();
-            $table->string('phone');
-            $table->string('password');
+            $table->string('phone')->nullable();
             $table->text('address')->nullable();
-            $table->longText('permissions')->nullable();
-            $table->boolean('is_active');
+            $table->string('password');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -10,7 +12,20 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        // $this->call(UsersTableSeeder::class);
+    {	
+    	DB::statement("DELETE FROM roles");
+    	DB::statement("DELETE FROM users");
+        DB::table('roles')->insert([
+        		'id' => 1,
+                'role' => 'admin',
+                'permissions' => 'all',
+        ]);
+        DB::table('users')->insert([
+                'name' => 'Admin',
+                'role_id' => 1,
+                'email' => 'admin@admin.com',
+                'password' => Hash::make('11'),
+                'is_active' => 1,
+        ]);
     }
 }
