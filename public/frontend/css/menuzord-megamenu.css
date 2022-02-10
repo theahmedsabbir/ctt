@@ -1,5 +1,5 @@
 /*
- * 	Menuzord-Responsive-Megamenu
+ *  Menuzord-Responsive-Megamenu
  * -----------------------------------------------
 */
 /*Item name: Menuzord - Responsive 
@@ -54,10 +54,10 @@ License: http://codecanyon.net/licenses
 }
 .last-header-menu{
     
-padding-left: 25px;
+/* padding-left: 25px; */
 }
 .menuzord-menu > li > a {
-    padding: 10px 16px;
+    padding: 10px 12px;
     display: inline-block;
     text-decoration: none;
     font-size: 14px;

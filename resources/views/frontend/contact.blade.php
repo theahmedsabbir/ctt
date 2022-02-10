@@ -65,28 +65,28 @@
             <div class="contact-info text-center bg-silver-light border-1px pt-60 pb-60">
               <i class="fa fa-phone font-36 mb-10 text-theme-colored2"></i>
               <h4>Call Us</h4>
-              <h6 class="text-gray">Phone: +262 695 2601</h6>
+              <h6 class="text-gray">Phone: 01743336006, 01322833605, 01685941931, 01818188205</h6>
             </div>
           </div>
           <div class="col-sm-12 col-md-3">
             <div class="contact-info text-center bg-silver-light border-1px pt-60 pb-60">
               <i class="fa fa-map-marker font-36 mb-10 text-theme-colored2"></i>
               <h4>Address</h4>
-              <h6 class="text-gray">121 King Street, Australia</h6>
+              <h6 class="text-gray">BIDC Road, DUET, Gazipur</h6>
             </div>
           </div>
           <div class="col-sm-12 col-md-3">
             <div class="contact-info text-center bg-silver-light border-1px pt-60 pb-60">
               <i class="fa fa-envelope font-36 mb-10 text-theme-colored2"></i>
               <h4>Email</h4>
-              <h6 class="text-gray">you@yourdomain.com</h6>
+              <h6 class="text-gray">info@cttedu.org</h6>
             </div>
           </div>
           <div class="col-sm-12 col-md-3">
             <div class="contact-info text-center bg-silver-light border-1px pt-60 pb-60">
-              <i class="fa fa-fax font-36 mb-10 text-theme-colored2"></i>
-              <h4>Fax</h4>
-              <h6 class="text-gray">(020) 123 4567</h6>
+              <i class="fa fa-facebook font-36 mb-10 text-theme-colored2"></i>
+              <h4>Facebook</h4>
+              <h6 class="text-gray"><a href="http://www.facebook.com/cttpolytechnic">www.facebook.com/cttpolytechnic</a></h6>
             </div>
           </div>
         </div>

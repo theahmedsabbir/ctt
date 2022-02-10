@@ -71,13 +71,28 @@ Route::get('/about-us', 'FrontendController@aboutUs');
 Route::get('/contact', 'FrontendController@contact');
 Route::get('/administrative', 'FrontendController@administrative');
 Route::get('/faculty', 'FrontendController@faculty');
+Route::get('/chairman-message', 'FrontendController@chairman');
+Route::get('/principal-message', 'FrontendController@principal');
 Route::get('/academic', 'FrontendController@academic');
-Route::get('/department', 'FrontendController@department');
+Route::get('facilities/lab', 'FrontendController@lab');
+Route::get('facilities/hostel', 'FrontendController@hostel');
+Route::get('facilities/scholarship', 'FrontendController@scholarship');
+Route::get('facilities/job', 'FrontendController@job');
+
+Route::get('/admission/admission-circular', 'FrontendController@admissionCircular');
+Route::get('/admission/admission-form', 'FrontendController@admissionForm');
+Route::get('/admission/admission-requirement', 'FrontendController@admissionRequirement');
+Route::get('/admission/prospectus', 'FrontendController@prospectus');
+Route::get('/admission/fee', 'FrontendController@fee');
+
+Route::get('/department/{department_slug}', 'FrontendController@department');
 Route::get('/admission', 'FrontendController@admission');
-Route::get('/gallery', 'FrontendController@gallery');
+
+Route::get('/gallery/{type}', 'FrontendController@gallery');
 
 // templates for dynamic cairo_pattern_get_surface(pattern)
 Route::get('/notice', function() { return view('frontend.notice');});
+Route::get('/downloadList', function() { return view('frontend.dynamic.downloadList');});
 
 Auth::routes();
 

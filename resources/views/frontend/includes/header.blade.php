@@ -19,6 +19,12 @@
                                         <a href="#">Administration</a>
                                         <ul class="dropdown">
                                             <li>
+                                                <a href="{{ url('/chairman-message') }}">Chairman Message</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/principal-message') }}">Principal Message</a>
+                                            </li>
+                                            <li>
                                                 <a href="{{ url('administrative') }}">Administrative</a>
                                             </li>
                                             <li>
@@ -33,16 +39,74 @@
                                         <a href="{{ url('department') }}">Department</a>
                                     </li>
                                     <li class="">
-                                        <a href="{{ url('admission') }}">Admission</a>
+                                        <a href="#">Admission</a>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="{{ url('/admission/admission-circular') }}">Admission Circular</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/admission/admission-form') }}">Admission Form</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/admission/admission-requirement') }}">Admission Requirement</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/admission/prospectus') }}">Prospectus</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/admission/fee') }}">Fee</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="{{ url('gallery') }}">Gallery</a>
+                                        <a href="{{ url('/notice') }}">Notice</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#">Facilities</a>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="{{ url('facilities/lab') }}">Our Lab Facilities</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('facilities/hostel') }}">Hostel Facilities</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('facilities/scholarship') }}">Scholarship</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('facilities/job') }}">Job Placement Centre</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="">
+                                        <a href="#">Gallery</a>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="{{ url('gallery/photo') }}">Photo Gallery</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('gallery/video') }}">Video Gallery</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('gallery/archive') }}">Archive</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="">
                                         <a href="{{ url('contact') }}">Contact</a>
                                     </li>
                                     <li class="last-header-menu">
-                                        <a href="#">Login/Sign Up</a>
+                                        <a href="#">Login</a>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="{{ url('admin/login') }}">Photo Gallery</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Teacher</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Student</a>
+                                            </li>
                                     </li>
 {{--                                     <li class="">
                                         <a href="#">Dropdown</a>
