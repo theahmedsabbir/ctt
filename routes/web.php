@@ -58,6 +58,14 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::get('admin/pattern/image/{id}', 'Admin\PatternController@image');
 	Route::post('admin/pattern/image/update', 'Admin\PatternController@imageUpdate');
 
+    //=================== Department ========================//
+	Route::get('admin/department/index', 'Admin\DepartmentController@index');
+	Route::get('admin/department/create', 'Admin\DepartmentController@create');
+	Route::post('admin/department/store', 'Admin\DepartmentController@store');
+	Route::get('admin/department/edit/{id}', 'Admin\DepartmentController@edit');
+	Route::post('admin/department/update/{id}', 'Admin\DepartmentController@update');
+	Route::get('admin/department/delete/{id}', 'Admin\DepartmentController@destroy');
+
 });
 
 
