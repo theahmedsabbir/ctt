@@ -18,7 +18,7 @@
         <i class="ion ion-android-people  tx-60 lh-0 tx-white op-7"></i>
         <div class="mg-l-20">
           <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Users</p>
-          <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">{{ App\Models\User::count() }}</p>
+          <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"></p>
         </div>
       </div>
       <div id="ch1" class="ht-50 tr-y-1"></div>
@@ -30,7 +30,7 @@
         <i class="ion ion-wrench  tx-60 lh-0 tx-white op-7"></i>
         <div class="mg-l-20">
           <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Installers</p>
-          <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">{{ App\Models\Installer::count() }}</p>
+          <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"></p>
         </div>
       </div>
       <div id="ch3" class="ht-50 tr-y-1"></div>
@@ -42,7 +42,7 @@
         <i class="ion ion-aperture  tx-60 lh-0 tx-white op-7"></i>
         <div class="mg-l-20">
           <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Products</p>
-          <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">{{ App\Models\Product::count() }}</p>
+          <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"></p>
         </div>
       </div>
       <div id="ch2" class="ht-50 tr-y-1"></div>
@@ -54,7 +54,7 @@
         <i class="ion ion-android-cart tx-60 lh-0 tx-white op-7"></i>
         <div class="mg-l-20">
           <p class="tx-10 tx-spacing-1 tx-mont tx-semibold tx-uppercase tx-white-8 mg-b-10">Orders</p>
-          <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1">{{ App\Models\Order::count() }}</p>
+          <p class="tx-24 tx-white tx-lato tx-bold mg-b-0 lh-1"></p>
         </div>
       </div>
       <div id="ch4" class="ht-50 tr-y-1"></div>

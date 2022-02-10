@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Admin;
+use App\Models\Role;
 use App\Models\User;
 use Session;
 use Str;
@@ -19,12 +20,12 @@ class AdminController extends Controller
 	}
 
     public function login(Request $request){
-    	// return $request->all();
+    	//return $request->all();
 
-        $request->validate([
-            'email' => 'required|string|email',
-            'password' => 'required|string',
-        ]);
+        // $request->validate([
+        //     'email' => 'required|string|email',
+        //     'password' => 'required|string',
+        // ]);
 
         //if admin table credential matches put id/details on the session
         $admin = User::where('email' ,$request->email)->first();
@@ -72,9 +73,9 @@ class AdminController extends Controller
             'role' => 'unique:roles'
         ]);
 
-        $role = new Role;
-        $role->slug = Str::slug($request->role);
-        $role->role = $request->role;
+        $role = new Role();
+        $role->role = 'admin';
+        $role->permissin = 'admin';
 
         $role->save();
         session()->flash('Success', 'Role saved successfully');
@@ -90,7 +91,7 @@ class AdminController extends Controller
         }
 
         // set null for this role in admin table
-        $admins = Admin::where('role', $role->slug)->get();
+        $admins = User::where('role', $role->slug)->get();
 
         foreach ($admins as $admin) {
             $admin->role = null;
@@ -119,7 +120,7 @@ class AdminController extends Controller
         ]);
 
         // return $request->all();
-        $admin = new Admin;
+        $admin = new User();
         $admin->name = $request->name;
         $admin->role = $request->role;
         $admin->email = $request->email;
@@ -133,7 +134,7 @@ class AdminController extends Controller
 
     public function edit($id){
 
-        $admin = Admin::find($id);
+        $admin = User::find($id);
 
         if ($admin == null) {
             return redirect()->back();
@@ -144,7 +145,7 @@ class AdminController extends Controller
 
     public function update(Request $request, $id){
 
-        $admin = Admin::find($id);
+        $admin = User::find($id);
 
         if ($admin == null) {
             return redirect()->back();
@@ -152,7 +153,7 @@ class AdminController extends Controller
 
         // if admin role is being changed and  no admin is left, then he cant change the role
         if($admin->role == 'admin' && $request->role != 'admin'){
-            $other_admins_count = Admin::where('role', 'admin')->where('id', '!=', $admin->id)->get()->count();
+            $other_admins_count = User::where('role', 'admin')->where('id', '!=', $admin->id)->get()->count();
             if($other_admins_count == 0){
                 session()->flash('Error', 'You can not change your role as there is no admin left');
                 return redirect()->back();
@@ -176,7 +177,7 @@ class AdminController extends Controller
 
     public function delete(Request $request, $id){
 
-        $admin = Admin::find($id);
+        $admin = User::find($id);
 
         if ($admin == null) {
             return redirect()->back();
