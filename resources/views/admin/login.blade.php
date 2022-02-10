@@ -25,7 +25,7 @@
         <div class="login-wrapper wd-250 wd-xl-350 mg-y-30">
           <h4 class="tx-inverse tx-center">Sign In</h4>
           <p class="tx-center mg-b-60">Welcome admin! Please sign in.</p>
-          <form action="{{ route('login') }}" method="POST">
+          <form action="{{ url('admin/login') }}" method="POST">
             @csrf
 
             <div class="form-group">

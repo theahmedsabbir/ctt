@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Admin;
-
+use App\Models\User;
 use Session;
 use Str;
 use Hash;
@@ -26,9 +26,9 @@ class AdminController extends Controller
             'password' => 'required|string',
         ]);
 
-        //if admin table credential matches put id/details on the session 
-        $admin = Admin::where('email' ,$request->email)->first();
-       
+        //if admin table credential matches put id/details on the session
+        $admin = User::where('email' ,$request->email)->first();
+
 
   		if ($admin){
             if (password_verify($request->password, $admin->password)) {
@@ -46,7 +46,7 @@ class AdminController extends Controller
         	session()->flash('Error', 'Email does not match');
             return redirect()->back();
         }
-        //redirect to dashboard 
+        //redirect to dashboard
 
     }
 
@@ -72,7 +72,7 @@ class AdminController extends Controller
             'role' => 'unique:roles'
         ]);
 
-        $role = new Role; 
+        $role = new Role;
         $role->slug = Str::slug($request->role);
         $role->role = $request->role;
 
@@ -97,7 +97,7 @@ class AdminController extends Controller
             $admin->save();
         }
 
-        // delete this role 
+        // delete this role
         $role->delete();
 
         session()->flash('Success', 'Role deleted successfully');
@@ -119,7 +119,7 @@ class AdminController extends Controller
         ]);
 
         // return $request->all();
-        $admin = new Admin; 
+        $admin = new Admin;
         $admin->name = $request->name;
         $admin->role = $request->role;
         $admin->email = $request->email;
@@ -165,7 +165,7 @@ class AdminController extends Controller
         $admin->email = $request->email;
 
         if ($request->password) {
-            $admin->password = Hash::make($request->password);            
+            $admin->password = Hash::make($request->password);
         }
 
         $admin->save();
@@ -188,7 +188,7 @@ class AdminController extends Controller
         return redirect('admin/admin/index');
     }
 
-    public function editRolePermission($id){ 
+    public function editRolePermission($id){
         $role = Role::find($id);
 
         if ($role == null || $role->slug == 'admin') {
@@ -198,7 +198,7 @@ class AdminController extends Controller
         return view('admin.admin.editRolePermission', compact('role'));
     }
 
-    public function updateRolePermission(Request $request, $id){ 
+    public function updateRolePermission(Request $request, $id){
         // return $request->all();
         $role = Role::find($id);
 
