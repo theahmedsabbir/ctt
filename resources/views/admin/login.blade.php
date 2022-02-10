@@ -25,9 +25,9 @@
         <div class="login-wrapper wd-250 wd-xl-350 mg-y-30">
           <h4 class="tx-inverse tx-center">Sign In</h4>
           <p class="tx-center mg-b-60">Welcome admin! Please sign in.</p>
-          <form action="{{ url('admin/login') }}" method="POST">
+          <form action="{{ route('login') }}" method="POST">
             @csrf
-            
+
             <div class="form-group">
               <input type="email" name="email" class="form-control" placeholder="Enter your email">
             </div><!-- form-group -->
@@ -57,7 +57,7 @@
 
     {{-- toastr --}}
       {{-- @dd(Session::get('Success')) --}}
-    <script type="text/javascript">    
+    <script type="text/javascript">
     @if (Session::has('Success'))
         toastr.options = {
           "closeButton": true,
@@ -75,7 +75,7 @@
           "hideEasing": "linear",
           "showMethod": "fadeIn",
           "hideMethod": "fadeOut"
-        }   
+        }
        toastr.success('{{Session::get('Success')}}');
     @endif
     @if (Session::has('Error'))
@@ -95,7 +95,7 @@
           "hideEasing": "linear",
           "showMethod": "fadeIn",
           "hideMethod": "fadeOut"
-        }   
+        }
        toastr.error('{{Session::get('Error')}}');
     @endif
     </script>

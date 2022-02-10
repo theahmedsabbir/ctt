@@ -36,11 +36,7 @@ Route::get('flush', function() {
    return "Flushed!";
 
 });
-
-
-
-
-// admin routes 
+// admin routes
 
 Route::get('/admin/login', 'Admin\AdminController@showLoginForm');
 Route::post('/admin/login', 'Admin\AdminController@login');
@@ -81,5 +77,4 @@ Route::get('/notice', function() { return view('frontend.notice');});
 
 Auth::routes();
 
-
-
+Route::get('/home', 'HomeController@index')->name('home');
