@@ -119,23 +119,26 @@
     <!-- MISSION AND VISSION -->
     <section id="courses" class="aboutUs atAGlance text-justify" style="background: #F9F9F6;">
       <div class="container pb-40">
-        <div class="section-title text-left">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 class="text-uppercase title">Mission and Vision</h2>              
-              <p class="text-uppercase mb-0">ABOUT OUR Mission and Vision</p>
-			  <img src="{{ asset('frontend/images/line.png') }}" alt="" class="line">	
-			</div>
-          </div>
-        </div>
         <div class="row mtli-row-clearfix">
         	<div class="col-md-12">
         		<div class="left text-justify">
         			<h2>Mission</h2>
-        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+        			<p>CTT is modern and ideal polytechnic institution. It is working to make educated and technologically efficient engineer to contribute in the true economic development of Bangladesh and can lead a fairly enriched lives.<br>
+CTT has a range of young and energetic engineers (instructors) besides some profound professor for imparting quality education. CTT always emphasis in enriches library, technical lab, training lab and well furnished classrooms for assuring true & realistic education. In the era of present globalization, CTT collaborates with some other polytechnic institutes in aboard for resource sharing and student transfer program. It is approved by BTEB and follows the rules of ministry of education.<br>
+It arranges a sound and politics free educational environment where students and faculty members can learn and practice new knowledge, skill & insight; and develop themselves for meeting future demand.</p>
         			<br>
         			<h2>Vision</h2>
-        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+        			<p>Creating Engineer for future and imparting quality education.</p>
+              <br>
+              <h2>Goals</h2>
+              <p>                     
+                  <i class="fa fa-caret-right"></i> Make CTT polytechnic institute as international standard.<br>
+                  <i class="fa fa-caret-right"></i> Providing practical and realistic education by creating sound educational environment.<br>
+                  <i class="fa fa-caret-right"></i> Retaining a range of good professional engineer to teach students.<br>
+                  <i class="fa fa-caret-right"></i> Developing an environment of involvement and professional culture among management and faculty members.<br>
+                  <i class="fa fa-caret-right"></i> Arranging latest tools and technologies to foster quality education.<br>
+                  <i class="fa fa-caret-right"></i> Sharing resources & expertise with local industries and international educational intuition thoughts strong networks.<br>
+              </p>
         		</div>
         	</div>
         </div>

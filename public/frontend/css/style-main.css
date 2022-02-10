@@ -8904,3 +8904,11 @@ body.has-fixed-footer .main-content {
     /* border-radius: 50%; */
     padding: 10px;
 }
+
+
+
+/*custom*/
+
+.bg-grey{
+    background: #F9F9F6 !important;
+}

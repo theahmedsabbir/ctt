@@ -6,8 +6,7 @@
                             <div class="widget dark">
                                 <img class="mt-5 mb-20" alt="" src="{{asset('frontend')}}/logo/logo.png" />
                                 <p>
-                                    It is a long established fact that a reader will be distracted by the readable
-                                    content of a page when looking at its layout. The point of using Lorem Ipsum is
+                                    CTT is modern and ideal polytechnic institution. It is working to make educated and technologically efficient engineer to contribute in the true economic development of Bangladesh and can lead a fairly enriched lives.
                                 </p>
                                 <a href="#"><span style="color: white">Terms & Conditions</span></a>
                                 <a href="#"><span style="margin-left: 40px; color: white">Privacy Policy</span></a>
