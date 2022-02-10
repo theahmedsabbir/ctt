@@ -16,17 +16,25 @@
 
         {{-- get the role and permission array --}}
         @php
+<<<<<<< HEAD
           $role = App\Models\Role::where('slug', Session::get('admin_role'))->first(); // ei admin er data
           $role_permissions = [];
           if($role != null && $role->permissions != null){
             $role_permissions = json_decode($role->permissions); // ei admin er ei roler permission ki ki
           }
+=======
+          // $role = App\Models\Role::where('slug', Session::get('admin_role'))->first(); // ei admin er data
+          // $role_permissions = [];
+          // if($role != null && $role->permissions != null){
+          //   $role_permissions = json_decode($role->permissions); // ei admin er ei roler permission ki ki 
+          // }
+>>>>>>> c855d384eb2a97c4fe68ef25ff2a1a277041b344
           // dd($role->permissions);
           // dd($role_permissions);
         @endphp
 
         {{-- admins --}}
-        @if (Session::get('admin_role') == 'admin' || in_array('admin', $role_permissions))
+        {{-- @if (Session::get('admin_role') == 'admin' || in_array('admin', $role_permissions)) --}}
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
               <i class="menu-item-icon icon ion-android-person tx-24"></i>
@@ -49,6 +57,7 @@
 
             </ul>
           </li>
+<<<<<<< HEAD
         @endif
 
         {{-- users --}}
@@ -410,6 +419,9 @@
 
           </ul>
         </li> --}}
+=======
+        {{-- @endif --}}
+>>>>>>> c855d384eb2a97c4fe68ef25ff2a1a277041b344
       </ul><!-- br-sideleft-menu -->
 
 

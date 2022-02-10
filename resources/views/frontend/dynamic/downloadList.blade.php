@@ -2,7 +2,15 @@
 
 @section('page-css')
 <style>
-	.left{}
+.box{
+    box-shadow: 0px 0px 30px rgb(0 0 0 / 14%);
+    padding: 17px 23px;
+    margin-bottom: 30px;
+}
+.box h2{
+	margin: 0;
+	margin-bottom: 10px;
+}
 </style>
 @endsection
 
@@ -12,7 +20,7 @@
 <div class="main-content">
 
     <!-- Section: inner-header -->
-    @include('frontend.includes.inner-header', ['title' => 'Admission Requirement', 'breadcrumb' => 'Admission Requirement'])
+    @include('frontend.includes.inner-header', ['title' => 'Page Name', 'breadcrumb' => 'Page Breadcrumb'])
 
 
 
@@ -30,11 +38,26 @@
         <div class="row mtli-row-clearfix">
         	<div class="col-md-8">
         		<div class="left">
-        			<h2>Lorem ipsum dolor sit amet.</h2>
-        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
-        			<br>
-        			<h2>Lorem ipsum dolor sit amet.</h2>
-        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur. Pharetra a aenean in varius sed tortor ipsum. Placerat scelerisque magna volutpat augue montes, in diam. Enim, eu et scelerisque sit volutpat risus in lectus massa. Volutpat scelerisque pellentesque sed tellus euismod lorem ut.</p>
+        			<div class="box mb-3">        				
+	        			<h2><a href="">Lorem ipsum dolor sit amet.</a></h2>
+	        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur.</p>
+        			</div>
+        			<div class="box mb-3">        				
+	        			<h2><a href="">Lorem ipsum dolor sit amet.</a></h2>
+	        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur.</p>
+        			</div>
+        			<div class="box mb-3">        				
+	        			<h2><a href="">Lorem ipsum dolor sit amet.</a></h2>
+	        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur.</p>
+        			</div>
+        			<div class="box mb-3">        				
+	        			<h2><a href="">Lorem ipsum dolor sit amet.</a></h2>
+	        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur.</p>
+        			</div>
+        			<div class="box mb-3">        				
+	        			<h2><a href="">Lorem ipsum dolor sit amet.</a></h2>
+	        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis, dignissim eget platea dictumst cursus velit. Leo vulputate id augue sem non ut nisl cursus consectetur.</p>
+        			</div>
         		</div>
         	</div>
         	<div class="col-md-4">

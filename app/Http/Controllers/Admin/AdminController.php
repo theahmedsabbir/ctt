@@ -35,7 +35,7 @@ class AdminController extends Controller
             if (password_verify($request->password, $admin->password)) {
                 Session::put('admin_id', $admin->id);
                 Session::put('admin_name', $admin->name);
-                Session::put('admin_role', $admin->role);
+                Session::put('admin_role', $admin->role? $admin->role->role : null);
 
                 session()->flash('Success', 'You are successfully logged in');
                 return redirect('/admin/dashboard');
