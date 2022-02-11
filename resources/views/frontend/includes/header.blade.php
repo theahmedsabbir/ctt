@@ -40,8 +40,8 @@
                                                 <a href="{{ url('/academic/calendar') }}" class="text-capitalize">calendar</a>
                                             </li>
                                             <li>
-                                                
-                                                <a href="{{ url('/academic/class-routine') }}" class="text-capitalize">class routine</a>                                      
+
+                                                <a href="{{ url('/academic/class-routine') }}" class="text-capitalize">class routine</a>
                                             </li>
                                             <li>
                                                 <a href="{{ url('/academic/exam-routine') }}" class="text-capitalize">exam routine</a>
@@ -63,7 +63,7 @@
                                         <ul class="dropdown">
                                             @foreach (App\Models\Department::orderBy('id', 'asc')->get() as $department)
                                             <li>
-                                                <a href="{{ url('/department' . $department->slug ) }}">{{$department->name}}</a>
+                                                <a href="{{ url('/department/' . $department->slug ) }}">{{$department->name}}</a>
                                             </li>
                                             @endforeach
                                         </ul>

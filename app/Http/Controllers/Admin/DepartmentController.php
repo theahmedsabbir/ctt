@@ -69,22 +69,27 @@ class DepartmentController extends Controller
 
         try{
             $department = Department::find($id);
-            if (isset($request->image)){
-                if ($department->image){
-                    file_exists(('department/').$department->image);
-                }else {
-                    unlink(public_path('/department/').$department->image);
-                }
-                $updateImage = time().'.'. $request->image->extension();
 
-                $request->image->move(public_path('department'), $updateImage);
-                $department->image = $updateImage;
+            if($department == null){
+                return redirect()->back();
             }
 
             $department->name = $request->name;
             $department->slug = str_replace(' ', '-', strtolower($request->name));
             $department->description = $request->description;
+
+            if (isset($request->image)){
+                if (file_exists('department/'.$department->image)){
+                    unlink('department/'.$department->image);
+                }
+
+                $updateImage = time().'.'. $request->image->extension();
+                $request->image->move('department/', $updateImage);
+                $department->image = $updateImage;
+            }
+
             $department->save();
+
             return redirect()->back()->withSuccess('Department has been updated.');
         }catch(Exception $exception){
             return redirect()->back()->withError($exception->getMessage());
@@ -94,6 +99,15 @@ class DepartmentController extends Controller
     public function destroy($id)
     {
         $department = Department::find($id);
+
+        if($department == null){
+    		return redirect()->back();
+    	}
+
+        if (file_exists('department/'.$department->image)){
+            unlink('department/'.$department->image);
+        }
+
         $department->delete();
         return redirect()->back()->withSuccess('Department has been deleted.');
     }
