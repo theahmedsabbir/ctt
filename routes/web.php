@@ -48,15 +48,13 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::get('/admin/dashboard', 'Admin\AdminController@dashboard');
 	Route::post('/admin/logout', 'Admin\AdminController@logout');
 
-	// pattern
+	// pattern //dummy routes
 	Route::get('admin/pattern/index', 'Admin\PatternController@index');
 	Route::get('admin/pattern/create', 'Admin\PatternController@create');
 	Route::post('admin/pattern/store', 'Admin\PatternController@store');
 	Route::get('admin/pattern/edit/{id}', 'Admin\PatternController@edit');
 	Route::post('admin/pattern/update/{id}', 'Admin\PatternController@update');
 	Route::post('admin/pattern/delete/{id}', 'Admin\PatternController@delete');
-	Route::get('admin/pattern/image/{id}', 'Admin\PatternController@image');
-	Route::post('admin/pattern/image/update', 'Admin\PatternController@imageUpdate');
 
     //=================== Department ========================//
 	Route::get('admin/department/index', 'Admin\DepartmentController@index');
@@ -82,6 +80,14 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::post('admin/student/update/{id}', 'Admin\StudentController@update');
 	Route::get('admin/student/delete/{id}', 'Admin\StudentController@destroy');
 
+	//=================== Post ========================//
+	Route::get('admin/post/index', 'Admin\FileController@index');
+	Route::get('admin/post/create', 'Admin\FileController@create');
+	Route::post('admin/post/store', 'Admin\FileController@store');
+	Route::get('admin/post/edit/{id}', 'Admin\FileController@edit');
+	Route::post('admin/post/update/{id}', 'Admin\FileController@update');
+	Route::post('admin/post/delete/{id}', 'Admin\FileController@delete');
+
 });
 
 
@@ -99,16 +105,13 @@ Route::get('facilities/hostel', 'FrontendController@hostel');
 Route::get('facilities/scholarship', 'FrontendController@scholarship');
 Route::get('facilities/job', 'FrontendController@job');
 
-Route::get('/admission/admission-circular', 'FrontendController@admissionCircular');
-Route::get('/admission/admission-form', 'FrontendController@admissionForm');
-Route::get('/admission/admission-requirement', 'FrontendController@admissionRequirement');
-Route::get('/admission/prospectus', 'FrontendController@prospectus');
-Route::get('/admission/fee', 'FrontendController@fee');
-
-Route::get('/department/{department_slug}', 'FrontendController@department');
-Route::get('/admission', 'FrontendController@admission');
-
 Route::get('/gallery/{type}', 'FrontendController@gallery');
+
+// dynamic
+Route::get('/list/{type}', 'FrontendController@list');
+Route::get('/department/{department_slug}', 'FrontendController@department');
+Route::get('/academic/{type}', 'FrontendController@list');
+Route::get('/admission/{type}', 'FrontendController@list');
 
 // templates for dynamic cairo_pattern_get_surface(pattern)
 Route::get('/notice', function() { return view('frontend.notice');});

@@ -36,7 +36,7 @@ class DepartmentController extends Controller
         ]);
 
         try{
-            $departmentImage = time().'.'. $request->image->extension();
+            $departmentImage = $request->name . time().'.'. $request->image->extension();
             $request->image->move(public_path('department'), $departmentImage);
 
             $department = new Department();

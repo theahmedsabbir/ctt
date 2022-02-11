@@ -30,18 +30,9 @@
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
               <i class="menu-item-icon icon ion-android-person tx-24"></i>
-              {{-- <i class="menu-item-icon fa fa-star tx-16"></i> --}}
-              <span class="menu-item-label">Admins</span>
+              <span class="menu-item-label">Roles</span>
             </a><!-- br-menu-link -->
-            <ul class="br-menu-sub" style="{{ Request::is('admin/admin*') ? 'display: block;' : 'display: none;'}}">
-
-              <li class="sub-item">
-                <a href="{{ url('admin/admin/index') }}" class="sub-link {{ Request::is('admin/admin/index') ? 'active' : ''}}">Manage</a>
-              </li>
-
-              <li class="sub-item">
-                <a href="{{ url('admin/admin/create') }}" class="sub-link {{ Request::is('admin/admin/create') ? 'active' : ''}}">Add</a>
-              </li>
+            <ul class="br-menu-sub" style="{{ Request::is('admin/admin/role*') ? 'display: block;' : 'display: none;'}}">
 
               <li class="sub-item">
                 <a href="{{ url('admin/admin/role/index') }}" class="sub-link {{ Request::is('admin/admin/role/*') ? 'active' : ''}}">Roles</a>
@@ -52,7 +43,7 @@
 
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
-              <i class="menu-item-icon icon ion-android-person tx-24"></i>
+              <i class="menu-item-icon icon ion-android-list tx-24"></i>
               {{-- <i class="menu-item-icon fa fa-star tx-16"></i> --}}
               <span class="menu-item-label">Department</span>
             </a><!-- br-menu-link -->
@@ -103,7 +94,7 @@
           </li>
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
-              <i class="menu-item-icon icon ion-android-person tx-24"></i>
+              <i class="menu-item-icon icon ion-compose tx-24"></i>
               {{-- <i class="menu-item-icon fa fa-star tx-16"></i> --}}
               <span class="menu-item-label">Post</span>
             </a><!-- br-menu-link -->

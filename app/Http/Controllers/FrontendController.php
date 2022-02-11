@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Models\Department;
+use App\Models\File;
 use App\Models\Installer;
 use App\Models\Order;
 use App\Models\SpecialOffer;
+use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
@@ -50,30 +51,24 @@ class FrontendController extends Controller
     }
 
 
-    public function admissionCircular(){
-        return view('frontend.admission.admissionCircular');
-    }
-    public function admissionForm(){
-        return view('frontend.admission.admissionForm');
-    }
-    public function admissionRequirement(){
-        return view('frontend.admission.admissionRequirement');
-    }
-    public function prospectus(){
-        return view('frontend.admission.prospectus');
-    }
-    public function fee(){
-        return view('frontend.admission.fee');
-    }
-
-
     public function department($departmentSlug){
-        return view('frontend.dynamic.department_single');
+        $department = Department::where('slug', $departmentSlug)->first();
+
+        if ($department == null) {
+            return redirect()->back();
+        }
+
+        return view('frontend.dynamic.department_single', compact('department'));
     }
     public function admission(){
         return view('frontend.admission');
     }
     public function gallery(){
         return view('frontend.gallery');
+    }
+    public function list($type){
+        $files = File::where('type', $type)->get();
+
+        return view('frontend.dynamic.list', compact('files', 'type'));
     }
 }
