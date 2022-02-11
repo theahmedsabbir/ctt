@@ -7,6 +7,7 @@ use App\Models\File;
 use App\Models\Installer;
 use App\Models\Order;
 use App\Models\SpecialOffer;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -24,7 +25,8 @@ class FrontendController extends Controller
         return view('frontend.administrative');
     }
     public function faculty(){
-        return view('frontend.faculty');
+        $teacher = User::where('role_id', 2)->orderBy('created_at', 'desc')->get();
+        return view('frontend.faculty', compact('teacher'));
     }
     public function chairman(){
         return view('frontend.chairman');
