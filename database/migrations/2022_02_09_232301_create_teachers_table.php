@@ -20,6 +20,9 @@ class CreateTeachersTable extends Migration
             $table->string('designation');
             $table->timestamp('joining_date');
             $table->float('salary', 8, 2);
+            $table->foreign('user_id')
+                    ->references('id')->on('users')
+                    ->onDelete('cascade');
             $table->timestamps();
         });
     }

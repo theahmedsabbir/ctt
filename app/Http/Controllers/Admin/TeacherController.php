@@ -3,18 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Department;
 use App\Models\Teacher;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
-
+use Hash;
+use Session;
 class TeacherController extends Controller
 {
     public function index()
     {
         $teacher = [
             'page' => 'index',
-            'data' => User::with('teacher')->get()
+            'data' => User::with('teacher')->where('role_id', 2)->get(),
+            'department' => Department::get()
         ];
         return view('admin.teacher.index', compact('teacher'));
     }
@@ -23,13 +26,15 @@ class TeacherController extends Controller
     {
         $teacher = [
             'page' => 'create',
-            'data' => ''
+            'data' => '',
+            'department' => Department::get()
         ];
         return view('admin.teacher.index', compact('teacher'));
     }
 
     public function store(Request $request)
     {
+        //dd($request->all());
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
@@ -48,13 +53,16 @@ class TeacherController extends Controller
             $teacher->role_id = 2;
             $teacher->email = $request->email;
             $teacher->address = $request->address;
-            $teacher->password = bcrypt($request->password);
+            $teacher->password = Hash::make($request->password);
             $teacher->save();
+            Session::put('teacher_id', $teacher->id);
+            Session::put('teacher_name', $teacher->name);
 
-            if(!empty($teacher)){
+            if($teacher->save()){
                 $new_teacher = new Teacher();
                 $new_teacher->user_id = $teacher->id;
                 $new_teacher->department_id = $request->department_id;
+                $new_teacher->designation = $request->designation;
                 $new_teacher->joining_date = $request->joining_date;
                 $new_teacher->salary = $request->salary;
                 $new_teacher->save();
@@ -69,7 +77,8 @@ class TeacherController extends Controller
     {
         $teacher = [
             'page' => 'edit',
-            'data' => User::find($id)
+            'data' => User::with('teacher')->find($id),
+            'department' => Department::get()
         ];
         return view('admin.teacher.index', compact('teacher'));
     }
@@ -100,6 +109,7 @@ class TeacherController extends Controller
                 $update_teacher->user_id = $teacher->id;
                 $update_teacher->department_id = $request->department_id;
                 $update_teacher->joining_date = $request->joining_date;
+                $update_teacher->designation = $request->designation;
                 $update_teacher->salary = $request->salary;
                 $update_teacher->save();
             }

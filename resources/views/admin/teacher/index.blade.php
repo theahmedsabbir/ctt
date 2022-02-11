@@ -5,7 +5,7 @@
 <div class="br-pagetitle">
 	<i class="icon ion-ios-list-outline"></i>
 	<div>
-	  <h4>Manage Department</h4>
+	  <h4>Manage Teacher</h4>
 	  <p class="mg-b-0">
 	  	<a href="{{ url('admin/dashboard') }}">Dashboard</a>
 	  	/ Teachers /
@@ -30,13 +30,13 @@
            @foreach ($teacher['data'] as $key => $teacher)
             <tr>
                 <td class="">{{ $key+1 }}</td>
-                <td class="">{{ $teacher->user->name ?? '' }}</td>
-                <td class="">{{ $teacher->user->email ?? '' }}</td>
-                <td class="">{{ $teacher->user->phone ?? '' }}</td>
-                <td class="">{{ $teacher->designation ?? '' }}</td>
+                <td class="">{{ $teacher->name ?? '' }}</td>
+                <td class="">{{ $teacher->email ?? '' }}</td>
+                <td class="">{{ $teacher->phone ?? '' }}</td>
+                <td class="">{{ $teacher->teacher->designation ?? '' }}</td>
                 <td class="">
-                    <a href="" class="btn btn-sm btn-primary">Edit</a>
-                    <a href="" class="btn btn-sm btn-primary">Delete</a>
+                    <a href="{{ url('/admin/teacher/edit/'.$teacher->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="{{ url('/admin/teacher/delete/'.$teacher->id) }}" onclick="return confirm('Are you sure delete this information?')" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
            @endforeach
@@ -75,7 +75,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Phone</label>
-                    <input type="text" name="phone" value="" class="form-control" placeholder="Teacher phone">
+                    <input type="number" name="phone" value="" class="form-control" placeholder="Teacher phone">
                 </div>
                 <div class="form-group">
                     <label for="">Email</label>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Address</label>
-                    <textarea name="address" id="address" cols="30" rows="10"></textarea>
+                    <textarea name="address" class="form-control" id="address" cols="30" rows="10"></textarea>
                     @if ($errors->has('address'))
                         <div class="text-danger">{{ $errors->first('address') }}</div>
                     @endif
@@ -163,25 +163,25 @@
       			@csrf
       			<div class="form-group">
                     <label for="">Name</label>
-                    <input type="text" name="name" value="{{ $teacher['data']->user->name ?? '' }}" class="form-control" placeholder="Teacher name" required>
+                    <input type="text" name="name" value="{{ $teacher['data']->name ?? '' }}" class="form-control" placeholder="Teacher name" required>
                     @if ($errors->has('name'))
                         <div class="text-danger">{{ $errors->first('name') }}</div>
                     @endif
                 </div>
                 <div class="form-group">
                     <label for="">Phone</label>
-                    <input type="text" name="phone" value="{{ $teacher['data']->user->phone ?? '' }}" class="form-control" placeholder="Teacher phone">
+                    <input type="text" name="phone" value="{{ $teacher['data']->phone ?? '' }}" class="form-control" placeholder="Teacher phone">
                 </div>
                 <div class="form-group">
                     <label for="">Email</label>
-                    <input type="email" name="email" value="{{ $teacher['data']->user->email ?? '' }}" class="form-control" placeholder="Teacher email" required>
+                    <input type="email" name="email" value="{{ $teacher['data']->email ?? '' }}" class="form-control" placeholder="Teacher email" required>
                     @if ($errors->has('email'))
                         <div class="text-danger">{{ $errors->first('email') }}</div>
                     @endif
                 </div>
                 <div class="form-group">
                     <label for="">Address</label>
-                    <textarea name="address" id="address" cols="30" rows="10">{{ $teacher['data']->user->address ?? '' }}</textarea>
+                    <textarea name="address" id="address" cols="30" rows="10" class="form-control">{{ $teacher['data']->address ?? '' }}</textarea>
                     @if ($errors->has('address'))
                         <div class="text-danger">{{ $errors->first('address') }}</div>
                     @endif
@@ -191,7 +191,7 @@
                   <select class="form-control" name="department_id" id="department_id">
                       <option selected disabled>Select e department</option>
                       @foreach ($teacher['department'] as $department)
-                          <option value="{{ $department->id }}" {{ $department->id == $teacher['data']->department_id ? 'selected' : '' }}>{{ $department->name }}</option>
+                          <option value="{{ $department->id }}" {{ $department->id == $teacher['data']->teacher->department_id ? 'selected' : '' }}>{{ $department->name }}</option>
                       @endforeach
                   </select>
                   @if ($errors->has('department_id'))
@@ -200,21 +200,21 @@
               </div>
                 <div class="form-group">
                     <label for="">Designation</label>
-                    <input type="text" name="designation" value="{{ $teacher['data']->designation }}" class="form-control" placeholder="Designation" required>
+                    <input type="text" name="designation" value="{{ $teacher['data']->teacher->designation }}" class="form-control" placeholder="Designation" required>
                     @if ($errors->has('designation'))
                         <div class="text-danger">{{ $errors->first('designation') }}</div>
                     @endif
                 </div>
                 <div class="form-group">
                   <label for="">Joining date</label>
-                  <input type="date" name="joining_date" value="{{ $teacher['data']->joining_date }}" class="form-control" placeholder="joining date" required>
+                  <input type="date" name="joining_date" value="{{Carbon\Carbon::parse($teacher['data']->teacher->joining_date)->toDateString()}}" class="form-control" placeholder="joining date" required>
                   @if ($errors->has('joining_date'))
                       <div class="text-danger">{{ $errors->first('joining_date') }}</div>
                   @endif
               </div>
               <div class="form-group">
                   <label for="">Salary</label>
-                  <input type="text" name="salary" value="{{ $teacher['data']->salary }}" class="form-control" placeholder="salary : 99999" required>
+                  <input type="text" name="salary" value="{{ $teacher['data']->teacher->salary }}" class="form-control" placeholder="salary : 99999" required>
                   @if ($errors->has('salary'))
                       <div class="text-danger">{{ $errors->first('salary') }}</div>
                   @endif

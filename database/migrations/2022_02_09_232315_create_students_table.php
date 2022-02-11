@@ -19,6 +19,9 @@ class CreateStudentsTable extends Migration
             $table->unsignedBigInteger('department_id');
             $table->string('roll');
             $table->string('shift');
+            $table->foreign('user_id')
+                    ->references('id')->on('users')
+                    ->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,14 +1,14 @@
 @extends('admin.template.master')
 
 @section('content')
-@if ($department['page'] == 'index')
+@if ($student['page'] == 'index')
 <div class="br-pagetitle">
 	<i class="icon ion-ios-list-outline"></i>
 	<div>
-	  <h4>Manage Department</h4>
+	  <h4>Manage Student</h4>
 	  <p class="mg-b-0">
 	  	<a href="{{ url('admin/dashboard') }}">Dashboard</a>
-	  	/ Department /
+	  	/ Students /
 	  </p>
 	</div>
 </div>
@@ -19,44 +19,41 @@
           <thead>
             <tr>
               <th class="">#</th>
-              <th class="">Image</th>
               <th class="">Name</th>
-              <th class="">Description</th>
+              <th class="">Email</th>
+              <th class="">Phone</th>
+              <th class="">Department</th>
               <th class="">Action</th>
             </tr>
           </thead>
           <tbody>
-              @foreach ($department['data'] as $department)
-                <tr>
-                    <td>{{ $loop->index+1 }}</td>
-                    <td>
-                        <img src="{{ asset('department/'.$department->image) }}" height="50" width="100" />
-                    </td>
-                    <td>{{ $department->name }}</td>
-                    <td>
-                        {{ Str::substr($department->description, 0, 35) }}
-                    </td>
-                    <td>
-                        <a href="{{ url('/admin/department/edit/'.$department->id) }}" class="btn btn-sm btn-info">Edit</a>
-                        <a href="{{ url('/admin/department/delete/'.$department->id) }}" class="btn btn-sm btn-danger">Delete</a>
-                    </td>
-                </tr>
-              @endforeach
+           @foreach ($student['data'] as $key => $student)
+            <tr>
+                <td class="">{{ $key+1 }}</td>
+                <td class="">{{ $student->name ?? '' }}</td>
+                <td class="">{{ $student->email ?? '' }}</td>
+                <td class="">{{ $student->phone ?? '' }}</td>
+                <td class="">{{ $student->student->department->name ?? '' }}</td>
+                <td class="">
+                    <a href="{{ url('/admin/student/edit/'.$student->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="{{ url('/admin/student/delete/'.$student->id) }}" onclick="return confirm('Are you sure delete this information?')" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+           @endforeach
           </tbody>
         </table>
-      </div><!-- table-wrapper -->
-
-    </div><!-- br-section-wrapper -->
-  </div><!-- br-pagebody -->
+      </div>
+    </div>
+  </div>
 @endif
-@if ($department['page'] == 'create')
+@if ($student['page'] == 'create')
 <div class="br-pagetitle">
 	<i class="icon ion-ios-list-outline"></i>
 	<div>
-	  <h4>Create Department</h4>
+	  <h4>Add Student</h4>
 	  <p class="mg-b-0">
 	  	<a href="{{ url('admin/dashboard') }}">Dashboard</a>
-	  	/ <a href="{{ url('admin/department/index') }}">Departments</a> / Create
+	  	/ <a href="{{ url('admin/student/index') }}">Students</a> / Create
 	  </p>
 	</div>
 </div>
@@ -67,32 +64,69 @@
         @endif
       <div class="row">
       	<div class="col-md-12">
-      		<form action="{{ url('admin/department/store') }}" method="POST" enctype="multipart/form-data">
+      		<form action="{{ url('admin/student/store') }}" method="POST" enctype="multipart/form-data">
       			@csrf
       			<div class="form-group">
-      				<label for="">Name</label>
-      				<input type="text" name="name" value="" class="form-control" placeholder="Department name" required>
-	  				@if ($errors->has('name'))
-	  					<div class="text-danger">{{ $errors->first('name') }}</div>
-	  				@endif
-      			</div>
-                <div class="form-group">
-                    <label for="">Description</label>
-                    <textarea class="form-control" name="description" rows="5" placeholder="Descrioption..."></textarea>
-                    @if ($errors->has('description'))
-                        <div class="text-danger">{{ $errors->first('description') }}</div>
+                    <label for="">Name</label>
+                    <input type="text" name="name" value="" class="form-control" placeholder="Student name" required>
+                    @if ($errors->has('name'))
+                        <div class="text-danger">{{ $errors->first('name') }}</div>
                     @endif
                 </div>
                 <div class="form-group">
-                    <label for="">Image</label>
-                    <input type="file" name="image" value="" class="form-control" required>
-                    @if ($errors->has('image'))
-                        <div class="text-danger">{{ $errors->first('image') }}</div>
+                    <label for="">Phone</label>
+                    <input type="text" name="phone" value="" class="form-control" placeholder="Student phone">
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="email" value="" class="form-control" placeholder="Student email" required>
+                    @if ($errors->has('email'))
+                        <div class="text-danger">{{ $errors->first('email') }}</div>
                     @endif
                 </div>
-      			<div class="form-group">
-      				<button type="submit" class="btn btn-teal mt-3">Submit</button>
-      			</div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" name="password" value="" class="form-control" placeholder="Student password" required>
+                    @if ($errors->has('password'))
+                        <div class="text-danger">{{ $errors->first('password') }}</div>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <label for="">Address</label>
+                    <textarea name="address" id="address" cols="30" rows="10" class="form-control"></textarea>
+                    @if ($errors->has('address'))
+                        <div class="text-danger">{{ $errors->first('address') }}</div>
+                    @endif
+                </div>
+              <div class="form-group">
+                  <label for="">Department</label>
+                  <select class="form-control" name="department_id" id="department_id">
+                      <option selected disabled>Select e department</option>
+                      @foreach ($student['department'] as $department)
+                          <option value="{{ $department->id }}">{{ $department->name }}</option>
+                      @endforeach
+                  </select>
+                  @if ($errors->has('department_id'))
+                      <div class="text-danger">{{ $errors->first('department_id') }}</div>
+                  @endif
+              </div>
+                <div class="form-group">
+                    <label for="">Roll</label>
+                    <input type="number" name="roll" value="" class="form-control" placeholder="Roll..." required>
+                    @if ($errors->has('roll'))
+                        <div class="text-danger">{{ $errors->first('roll') }}</div>
+                    @endif
+                </div>
+              <div class="form-group">
+                  <label for="">Shift</label>
+                  <input type="text" name="shift" value="" class="form-control" placeholder="Shift..." required>
+                  @if ($errors->has('shift'))
+                      <div class="text-danger">{{ $errors->first('shift') }}</div>
+                  @endif
+              </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-teal mt-3">Submit</button>
+                </div>
       		</form>
       	</div>
       </div>
@@ -100,14 +134,14 @@
     <!-- br-section-wrapper -->
 </div>
 @endif
-@if ($department['page'] == 'edit')
+@if ($student['page'] == 'edit')
 <div class="br-pagetitle">
 	<i class="icon ion-ios-list-outline"></i>
 	<div>
-	  <h4>Edit Department</h4>
+	  <h4>Edit Student</h4>
 	  <p class="mg-b-0">
 	  	<a href="{{ url('admin/dashboard') }}">Dashboard</a>
-	  	/ <a href="{{ url('admin/department/index') }}">Departments</a> / Edit
+	  	/ <a href="{{ url('admin/student/index') }}">Students</a> / Edit
 	  </p>
 	</div>
 </div>
@@ -118,33 +152,62 @@
         @endif
       <div class="row">
       	<div class="col-md-12">
-      		<form action="{{ url('admin/department/update/'.$department['data']->id) }}" method="POST" enctype="multipart/form-data">
+      		<form action="{{ url('admin/student/update/'.$student['data']->id) }}" method="POST" enctype="multipart/form-data">
       			@csrf
       			<div class="form-group">
-      				<label for="">Name</label>
-      				<input type="text" name="name" value="{{ $department['data']->name }}" class="form-control" placeholder="Department name" required>
-	  				@if ($errors->has('name'))
-	  					<div class="text-danger">{{ $errors->first('name') }}</div>
-	  				@endif
-      			</div>
-                <div class="form-group">
-                    <label for="">Description</label>
-                    <textarea class="form-control" name="description" rows="5" placeholder="Descrioption...">{{ $department['data']->description }}</textarea>
-                    @if ($errors->has('description'))
-                        <div class="text-danger">{{ $errors->first('description') }}</div>
+                    <label for="">Name</label>
+                    <input type="text" name="name" value="{{ $student['data']->name ?? '' }}" class="form-control" placeholder="Student name" required>
+                    @if ($errors->has('name'))
+                        <div class="text-danger">{{ $errors->first('name') }}</div>
                     @endif
                 </div>
                 <div class="form-group">
-                    <label for="">Image</label>
-                    <input type="file" name="image" value="" class="form-control" />
-                    <img src="{{ asset('department/'.$department['data']->image) }}" height="50" width="100" />
-                    @if ($errors->has('image'))
-                        <div class="text-danger">{{ $errors->first('image') }}</div>
+                    <label for="">Phone</label>
+                    <input type="text" name="phone" value="{{ $student['data']->phone ?? '' }}" class="form-control" placeholder="Student phone">
+                </div>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="email" name="email" value="{{ $student['data']->email ?? '' }}" class="form-control" placeholder="Student email" required>
+                    @if ($errors->has('email'))
+                        <div class="text-danger">{{ $errors->first('email') }}</div>
                     @endif
                 </div>
-      			<div class="form-group">
-      				<button type="submit" class="btn btn-teal mt-3">Submit</button>
-      			</div>
+                <div class="form-group">
+                    <label for="">Address</label>
+                    <textarea name="address" id="address" cols="30" rows="10" class="form-control">{{ $student['data']->address ?? '' }}</textarea>
+                    @if ($errors->has('address'))
+                        <div class="text-danger">{{ $errors->first('address') }}</div>
+                    @endif
+                </div>
+              <div class="form-group">
+                  <label for="">Department</label>
+                  <select class="form-control" name="department_id" id="department_id">
+                      <option selected disabled>Select e department</option>
+                      @foreach ($student['department'] as $department)
+                          <option value="{{ $department->id }}" {{ $department->id == $student['data']->student->department_id ? 'selected' : '' }}>{{ $department->name }}</option>
+                      @endforeach
+                  </select>
+                  @if ($errors->has('department_id'))
+                      <div class="text-danger">{{ $errors->first('department_id') }}</div>
+                  @endif
+              </div>
+                <div class="form-group">
+                    <label for="">Roll</label>
+                    <input type="number" name="roll" value="{{ $student['data']->student->roll }}" class="form-control" placeholder="Roll.." required>
+                    @if ($errors->has('roll'))
+                        <div class="text-danger">{{ $errors->first('roll') }}</div>
+                    @endif
+                </div>
+              <div class="form-group">
+                  <label for="">Shift</label>
+                  <input type="text" name="shift" value="{{ $student['data']->student->shift }}" class="form-control" placeholder="Shift..." required>
+                  @if ($errors->has('shift'))
+                      <div class="text-danger">{{ $errors->first('shift') }}</div>
+                  @endif
+              </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-teal mt-3">Submit</button>
+                </div>
       		</form>
       	</div>
       </div>

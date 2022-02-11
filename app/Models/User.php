@@ -20,4 +20,8 @@ class User extends Model
     {
         return $this->hasOne(Teacher::class);
     }
+    public function student()
+    {
+        return $this->hasOne(Student::class)->with('department');
+    }
 }
