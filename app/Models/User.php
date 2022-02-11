@@ -15,4 +15,9 @@ class User extends Model
     public function role(){
     	return $this->belongsTo(Role::class, 'role_id', 'id');
     }
+
+    public function teacher()
+    {
+        return $this->hasOne(Teacher::class);
+    }
 }

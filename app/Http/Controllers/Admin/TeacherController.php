@@ -14,7 +14,7 @@ class TeacherController extends Controller
     {
         $teacher = [
             'page' => 'index',
-            'data' => Teacher::with('user')->get()
+            'data' => User::with('teacher')->get()
         ];
         return view('admin.teacher.index', compact('teacher'));
     }
