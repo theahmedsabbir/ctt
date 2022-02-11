@@ -22,10 +22,10 @@ class AdminController extends Controller
     public function login(Request $request){
     	//return $request->all();
 
-        // $request->validate([
-        //     'email' => 'required|string|email',
-        //     'password' => 'required|string',
-        // ]);
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+        ]);
 
         //if admin table credential matches put id/details on the session
         $admin = User::where('email' ,$request->email)->first();
