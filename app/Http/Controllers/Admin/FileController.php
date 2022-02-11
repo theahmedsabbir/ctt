@@ -71,11 +71,6 @@ class FileController extends Controller
 			'file'          => 'mimes:pdf,doc,docx,ppt,pptx,txt,xls,xlsx',
     	]);
 
-    	if (!$r->image && !$r->file) {
-    		session()->flash('Error', 'Image or file has to be uploaded');
-    		return redirect()->back();
-    	}
-
     	$file = File::find($id);
     	if($file==null){
     		return redirect()->back();
@@ -90,7 +85,7 @@ class FileController extends Controller
         if (isset($r->image)) {
 
 
-	        if (file_exists('file/' . $file->image)) {
+	        if ($file->image && file_exists('file/' . $file->image)) {
 	            unlink('file/' . $file->image);
 	        }
 

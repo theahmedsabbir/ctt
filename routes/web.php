@@ -113,13 +113,13 @@ Route::get('facilities/hostel', 'FrontendController@hostel');
 Route::get('facilities/scholarship', 'FrontendController@scholarship');
 Route::get('facilities/job', 'FrontendController@job');
 
-Route::get('/gallery/{type}', 'FrontendController@gallery');
 
 // dynamic
 Route::get('/list/{type}', 'FrontendController@list');
 Route::get('/department/{department_slug}', 'FrontendController@department');
 Route::get('/academic/{type}', 'FrontendController@list');
 Route::get('/admission/{type}', 'FrontendController@list');
+Route::get('/gallery/{type}', 'FrontendController@gallery');
 
 // templates for dynamic cairo_pattern_get_surface(pattern)
 Route::get('/notice', function() { return view('frontend.notice');});

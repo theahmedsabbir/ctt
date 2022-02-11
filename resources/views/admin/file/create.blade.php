@@ -29,7 +29,10 @@
 	                    <option value="admission-form" class="text-capitalize">admission-form</option>
 	                    <option value="admission-requirement" class="text-capitalize">admission-requirement</option>
 	                    <option value="prospectus" class="text-capitalize">prospectus</option>
-	                    <option value="fee" class="text-capitalize">fee</option>
+	                    <option value="fee" class="text-capitalize">fee</option>	                    
+						<option value="photo" class="text-capitalize">photo</option>
+						<option value="video" class="text-capitalize">video</option>
+						<option value="archive" class="text-capitalize">archive</option>
 	                </select>
 	            </div>
 

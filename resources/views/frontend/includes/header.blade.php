@@ -118,7 +118,7 @@
                                                 <a href="{{ url('gallery/video') }}">Video Gallery</a>
                                             </li>
                                             <li>
-                                                <a href="{{ url('gallery/archive') }}">Archive</a>
+                                                <a href="{{ url('list/archive') }}">Archive</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -129,7 +129,7 @@
                                         <a href="#">Login</a>
                                         <ul class="dropdown">
                                             <li>
-                                                <a href="{{ url('admin/login') }}">Photo Gallery</a>
+                                                <a href="{{ url('admin/login') }}">Admin</a>
                                             </li>
                                             <li>
                                                 <a href="#">Teacher</a>
