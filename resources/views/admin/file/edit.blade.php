@@ -24,11 +24,14 @@
 	                    <option value="public-exam-result" {{ $file->type == 'public-exam-result' ? 'selected' : '' }} class="text-capitalize">public-exam-result</option>
 	                    <option value="institutional-result" {{ $file->type == 'institutional-result' ? 'selected' : '' }} class="text-capitalize">institutional-result</option>
 	                    <option value="course-structure" {{ $file->type == 'course-structure' ? 'selected' : '' }} class="text-capitalize">course-structure</option>
-	                    <option value="admission-circular" class="text-capitalize">admission-circular</option>
-<option value="admission-form" class="text-capitalize">admission-form</option>
-<option value="admission-requirement" class="text-capitalize">admission-requirement</option>
-<option value="prospectus" class="text-capitalize">prospectus</option>
-<option value="fee" class="text-capitalize">fee</option>
+	                    <option value="admission-circular"  {{ $file->type == 'admission-circular' ? 'selected' : '' }} class="text-capitalize">admission-circular</option>
+						<option value="admission-form"  {{ $file->type == 'admission-form' ? 'selected' : '' }} class="text-capitalize">admission-form</option>
+						<option value="admission-requirement"  {{ $file->type == 'admission-requirement' ? 'selected' : '' }} class="text-capitalize">admission-requirement</option>
+						<option value="prospectus"  {{ $file->type == 'prospectus' ? 'selected' : '' }} class="text-capitalize">prospectus</option>
+						<option value="fee"  {{ $file->type == 'fee' ? 'selected' : '' }} class="text-capitalize">fee</option>
+						<option value="photo"  {{ $file->type == 'photo' ? 'selected' : '' }} class="text-capitalize">photo</option>
+						<option value="video"  {{ $file->type == 'video' ? 'selected' : '' }} class="text-capitalize">video</option>
+						<option value="archive"  {{ $file->type == 'archive' ? 'selected' : '' }} class="text-capitalize">archive</option>
 	                </select>
 	            </div>
 

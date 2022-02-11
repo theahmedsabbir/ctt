@@ -63,8 +63,9 @@ class FrontendController extends Controller
     public function admission(){
         return view('frontend.admission');
     }
-    public function gallery(){
-        return view('frontend.gallery');
+    public function gallery($type){
+        $files = File::where('type', $type)->get();
+        return view('frontend.gallery', compact('files', 'type'));
     }
     public function list($type){
         $files = File::where('type', $type)->get();
