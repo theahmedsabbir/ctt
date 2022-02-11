@@ -47,12 +47,16 @@ class TeacherController extends Controller
         ]);
 
         try{
+            $avatar = $request->name . time().'.'. $request->avatar->extension();
+            $request->avatar->move(public_path('avatar/'), $avatar);
+
             $teacher = new User();
             $teacher->name = $request->name;
             $teacher->phone = $request->phone;
             $teacher->role_id = 2;
             $teacher->email = $request->email;
             $teacher->address = $request->address;
+            $teacher->avatar = $avatar;
             $teacher->password = Hash::make($request->password);
             $teacher->save();
             Session::put('teacher_id', $teacher->id);
@@ -97,22 +101,34 @@ class TeacherController extends Controller
 
         try{
             $teacher = User::find($id);
+            if($teacher == null){
+                return redirect()->back();
+            }
             $teacher->name = $request->name;
             $teacher->phone = $request->phone;
             $teacher->role_id = 2;
             $teacher->email = $request->email;
             $teacher->address = $request->address;
-            $teacher->save();
 
-            if(!empty($teacher)){
-                $update_teacher = Teacher::where('user_id', $id)->first();
-                $update_teacher->user_id = $teacher->id;
-                $update_teacher->department_id = $request->department_id;
-                $update_teacher->joining_date = $request->joining_date;
-                $update_teacher->designation = $request->designation;
-                $update_teacher->salary = $request->salary;
-                $update_teacher->save();
+            if (isset($request->avatar)){
+                if (file_exists('avatar/'.$teacher->avatar)){
+                    unlink('avatar/'.$teacher->avatar);
+                }
+
+                $updateAvatar= time().'.'. $request->avatar->extension();
+                $request->avatar->move('avatar/', $updateAvatar);
+                $teacher->avatar = $updateAvatar;
             }
+
+            $update_teacher = Teacher::where('user_id', $id)->first();
+            $update_teacher->user_id = $teacher->id;
+            $update_teacher->department_id = $request->department_id;
+            $update_teacher->joining_date = $request->joining_date;
+            $update_teacher->designation = $request->designation;
+            $update_teacher->salary = $request->salary;
+            $update_teacher->save();
+
+            $teacher->save();
             return redirect()->back()->withSuccess('Teacher has been updated.');
         }catch(Exception $exception){
             return redirect()->back()->withError($exception->getMessage());
@@ -122,6 +138,12 @@ class TeacherController extends Controller
     public function destroy($id)
     {
         $teacher = User::find($id);
+        if($teacher == null){
+            return redirect()->back();
+        }
+        if (file_exists('avatar/'.$teacher->avatar)){
+            unlink('avatar/'.$teacher->avatar);
+        }
         $teacher->delete();
         return redirect()->back()->withSuccess('Teacher has been deleted.');
     }
@@ -163,12 +185,16 @@ class TeacherController extends Controller
         ]);
 
         try{
+            $avatar = $request->name . time().'.'. $request->avatar->extension();
+            $request->avatar->move(public_path('avatar/'), $avatar);
+
             $stuff = new User();
             $stuff->name = $request->name;
             $stuff->phone = $request->phone;
             $stuff->role_id = 4;
             $stuff->email = $request->email;
             $stuff->address = $request->address;
+            $stuff->avatar = $avatar;
             $stuff->password = Hash::make($request->password);
             $stuff->save();
             Session::put('stuff_id', $stuff->id);
@@ -212,22 +238,36 @@ class TeacherController extends Controller
 
         try{
             $stuff = User::find($id);
+
+            if($stuff == null){
+                return redirect()->back();
+            }
+
             $stuff->name = $request->name;
             $stuff->phone = $request->phone;
             $stuff->role_id = 4;
             $stuff->email = $request->email;
             $stuff->address = $request->address;
-            $stuff->save();
 
-            if(!empty($teacher)){
-                $update_stuff = Teacher::where('user_id', $id)->first();
-                $update_stuff->user_id = $stuff->id;
-                $update_stuff->department_id = $request->department_id;
-                $update_stuff->joining_date = $request->joining_date;
-                $update_stuff->designation = 'stuff';
-                $update_stuff->salary = $request->salary;
-                $update_stuff->save();
+            if (isset($request->avatar)){
+                if (file_exists('avatar/'.$stuff->avatar)){
+                    unlink('avatar/'.$stuff->avatar);
+                }
+
+                $updateAvatar= time().'.'. $request->avatar->extension();
+                $request->avatar->move('avatar/', $updateAvatar);
+                $stuff->avatar = $updateAvatar;
             }
+
+            $update_stuff = Teacher::where('user_id', $id)->first();
+            $update_stuff->user_id = $stuff->id;
+            $update_stuff->department_id = $request->department_id;
+            $update_stuff->joining_date = $request->joining_date;
+            $update_stuff->designation = 'stuff';
+            $update_stuff->salary = $request->salary;
+            $update_stuff->save();
+
+            $stuff->save();
             return redirect()->back()->withSuccess('Stuff has been updated.');
         }catch(Exception $exception){
             return redirect()->back()->withError($exception->getMessage());

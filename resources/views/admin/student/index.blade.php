@@ -124,6 +124,10 @@
                       <div class="text-danger">{{ $errors->first('shift') }}</div>
                   @endif
               </div>
+              <div class="form-group">
+                <label for="">Avatar</label>
+                <input type="file" name="avatar" value="" class="form-control" />
+            </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-teal mt-3">Submit</button>
                 </div>
@@ -205,6 +209,13 @@
                       <div class="text-danger">{{ $errors->first('shift') }}</div>
                   @endif
               </div>
+              <div class="form-group">
+                <label for="">Avatar</label>
+                <input type="file" name="avatar" value="" class="form-control" />
+                @if ($student['data']->avatar != null)
+                    <img src="{{ asset('avatar/'.$student['data']->avatar) }}" height="100" width="100"/>
+                @endif
+            </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-teal mt-3">Submit</button>
                 </div>

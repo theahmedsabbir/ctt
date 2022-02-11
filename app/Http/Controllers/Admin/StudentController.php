@@ -47,12 +47,17 @@ class StudentController extends Controller
         ]);
 
         try{
+
+            $avatar = $request->name . time().'.'. $request->avatar->extension();
+            $request->avatar->move(public_path('avatar/'), $avatar);
+
             $student = new User();
             $student->name = $request->name;
             $student->phone = $request->phone;
             $student->role_id = 3;
             $student->email = $request->email;
             $student->address = $request->address;
+            $student->avatar = $avatar;
             $student->password = Hash::make($request->password);
             $student->save();
             Session::put('student_id', $student->id);
@@ -95,21 +100,36 @@ class StudentController extends Controller
 
         try{
             $student = User::find($id);
+
+            if($student == null){
+                return redirect()->back();
+            }
+
             $student->name = $request->name;
             $student->phone = $request->phone;
             $student->role_id = 3;
             $student->email = $request->email;
             $student->address = $request->address;
-            $student->save();
 
-            if(!empty($student)){
-                $update_student = Student::where('user_id', $id)->first();
-                $update_student->user_id = $student->id;
-                $update_student->department_id = $request->department_id;
-                $update_student->roll = $request->roll;
-                $update_student->shift = $request->shift;
-                $update_student->save();
+            if (isset($request->avatar)){
+                if (file_exists('avatar/'.$student->avatar)){
+                    unlink('avatar/'.$student->avatar);
+                }
+
+                $updateAvatar= time().'.'. $request->avatar->extension();
+                $request->avatar->move('avatar/', $updateAvatar);
+                $student->avatar = $updateAvatar;
             }
+
+
+            $update_student = Student::where('user_id', $id)->first();
+            $update_student->user_id = $student->id;
+            $update_student->department_id = $request->department_id;
+            $update_student->roll = $request->roll;
+            $update_student->shift = $request->shift;
+            $update_student->save();
+
+            $student->save();
             return redirect()->back()->withSuccess('Student has been updated.');
         }catch(Exception $exception){
             return redirect()->back()->withError($exception->getMessage());
@@ -119,6 +139,12 @@ class StudentController extends Controller
     public function destroy($id)
     {
         $student = User::find($id);
+        if($student == null) {
+            return redirect()->back();
+        }
+        if (file_exists('avatar/'.$student->avatar)){
+            unlink('avatar/'.$student->avatar);
+        }
         $student->delete();
         return redirect()->back()->withSuccess('Student has been deleted.');
     }
