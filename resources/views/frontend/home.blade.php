@@ -22,11 +22,9 @@
     <!-- about us -->
     <section id="courses" class="bg-theme-white">
       <marquee class="container-fluid marquee">
-      	<a class="" href="{{ url('/notice') }}">There is no such alternative.</a>
-      	<a class="" href="{{ url('/notice') }}">There is no such alternative.</a>
-      	<a class="" href="{{ url('/notice') }}">There is no such alternative.</a>
-      	<a class="" href="{{ url('/notice') }}">There is no such alternative.</a>
-      	<a class="" href="{{ url('/notice') }}">There is no such alternative.</a>
+      	@foreach (App\Models\File::where('type', 'notice')->orderBy('created_at', 'desc')->get() as $notice)
+          <a class="" href="{{ url('list/notice'  ) }}">{{$notice->title}}</a>
+        @endforeach
       </marquee>
     </section>
 
@@ -150,56 +148,16 @@
           <div class="row mtli-row-clearfix">
               <div class="col-md-12">
                   <div class="row">
-                    <div class="col-md-4 computer">
-                        <a href="#">
-                            <img src="{{ asset('frontend/images/23090163.png') }}" alt="" class="image" style="border-radius: 10px;">
+                    @foreach (App\Models\Department::orderBy('id', 'asc')->take(6)->get() as $department)
+                    <div class="col-md-4 electrical " style="margin-bottom: 20px;">
+                        <a href="{{ url('department/' . $department->slug ) }}">
+                            <img src="{{ asset('department/' . $department->image ) }}" alt="" class="image" style="border-radius: 10px; height: 188px;">
                             <div class="middle">
-                                <div class="text">Computer Technology</div>
+                                <div class="text">{{ $department->name }}</div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-4 electrical">
-                        <a href="#">
-                            <img src="{{ asset('frontend/images/Electrical lab2 1.png') }}" alt="" class="image" style="border-radius: 10px;">
-                            <div class="middle">
-                                <div class="text">Electrical Technology</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 civil">
-                        <a href="#">
-                        <img src="{{ asset('frontend/images/20191102_110304.png') }}" alt="" class="image" style="border-radius: 10px;">
-                        <div class="middle">
-                            <div class="text">Civil Technology</div>
-                        </div>
-                        </a>
-                    </div>
-                  </div>
-                  <div class="row" style="margin-top: 25px;">
-                    <div class="col-md-4 power">
-                        <a href="#">
-                            <img src="{{ asset('frontend/images/23090144.png') }}" alt="" class="image" style="border-radius: 10px;">
-                            <div class="middle">
-                                <div class="text">Power Technology</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 machanical">
-                        <a href="#">
-                        <img src="{{ asset('frontend/images/Machanical lab 1.png') }}" alt="" class="image" style="border-radius: 10px;">
-                        <div class="middle">
-                            <div class="text">Machanical Technology</div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 taxtile">
-                        <a href="#">
-                        <img src="{{ asset('frontend/images/Machanical lab 1.png') }}" alt="" class="image" style="border-radius: 10px;">
-                        <div class="middle">
-                            <div class="text">Taxtile Technology</div>
-                        </div>
-                        </a>
-                    </div>
+                    @endforeach
                   </div>
               </div>
           </div>

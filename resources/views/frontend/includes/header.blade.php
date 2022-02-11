@@ -33,10 +33,40 @@
                                         </ul>
                                     </li>
                                     <li class="">
-                                        <a href="{{ url('academic') }}">Academic</a>
+                                        <a href="#">Academic</a>
+
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="{{ url('/academic/calendar') }}" class="text-capitalize">calendar</a>
+                                            </li>
+                                            <li>
+                                                
+                                                <a href="{{ url('/academic/class-routine') }}" class="text-capitalize">class routine</a>                                      
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/academic/exam-routine') }}" class="text-capitalize">exam routine</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/academic/public-exam-result') }}" class="text-capitalize">Public Exam Result</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/academic/institutional-result') }}" class="text-capitalize">Institutional Result</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('/academic/course-structure') }}" class="text-capitalize">Course Structure</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="">
-                                        <a href="{{ url('department') }}">Department</a>
+                                        <a href="#">Department</a>
+
+                                        <ul class="dropdown">
+                                            @foreach (App\Models\Department::orderBy('id', 'asc')->get() as $department)
+                                            <li>
+                                                <a href="{{ url('/department' . $department->slug ) }}">{{$department->name}}</a>
+                                            </li>
+                                            @endforeach
+                                        </ul>
                                     </li>
                                     <li class="">
                                         <a href="#">Admission</a>
@@ -59,7 +89,7 @@
                                         </ul>
                                     </li>
                                     <li class="">
-                                        <a href="{{ url('/notice') }}">Notice</a>
+                                        <a href="{{ url('/list/notice') }}">Notice</a>
                                     </li>
                                     <li class="">
                                         <a href="#">Facilities</a>

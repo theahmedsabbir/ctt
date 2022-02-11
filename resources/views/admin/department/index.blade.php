@@ -3,7 +3,7 @@
 @section('content')
 @if ($department['page'] == 'index')
 <div class="br-pagetitle">
-	<i class="icon ion-ios-list-outline"></i>
+	<i class="icon ion-android-list"></i>
 	<div>
 	  <h4>Manage Department</h4>
 	  <p class="mg-b-0">
@@ -51,7 +51,7 @@
 @endif
 @if ($department['page'] == 'create')
 <div class="br-pagetitle">
-	<i class="icon ion-ios-list-outline"></i>
+	<i class="icon ion-android-list"></i>
 	<div>
 	  <h4>Create Department</h4>
 	  <p class="mg-b-0">
@@ -78,7 +78,7 @@
       			</div>
                 <div class="form-group">
                     <label for="">Description</label>
-                    <textarea class="form-control" name="description" rows="5" placeholder="Descrioption..."></textarea>
+                    <textarea class="form-control" name="description"  id="summernote"  rows="5" placeholder="Descrioption..."></textarea>
                     @if ($errors->has('description'))
                         <div class="text-danger">{{ $errors->first('description') }}</div>
                     @endif
@@ -102,7 +102,7 @@
 @endif
 @if ($department['page'] == 'edit')
 <div class="br-pagetitle">
-	<i class="icon ion-ios-list-outline"></i>
+	<i class="icon ion-android-list"></i>
 	<div>
 	  <h4>Edit Department</h4>
 	  <p class="mg-b-0">
@@ -129,7 +129,7 @@
       			</div>
                 <div class="form-group">
                     <label for="">Description</label>
-                    <textarea class="form-control" name="description" rows="5" placeholder="Descrioption...">{{ $department['data']->description }}</textarea>
+                    <textarea class="form-control" name="description"  id="summernote" rows="5" placeholder="Descrioption...">{{ $department['data']->description }}</textarea>
                     @if ($errors->has('description'))
                         <div class="text-danger">{{ $errors->first('description') }}</div>
                     @endif
