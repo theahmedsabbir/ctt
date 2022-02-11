@@ -12,6 +12,7 @@
 
         <label class="sidebar-label pd-x-10 mg-t-25 mg-b-20 tx-info">Registrations</label>
 
+
         {{-- @dd(Session::all()) --}}
 
         {{-- get the role and permission array --}}
@@ -25,6 +26,7 @@
 
         {{-- admins --}}
         {{-- @if (Session::get('admin_role') == 'admin' || in_array('admin', $role_permissions)) --}}
+
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
               <i class="menu-item-icon icon ion-android-person tx-24"></i>
@@ -47,6 +49,7 @@
 
             </ul>
           </li>
+
         {{-- @endif --}}
 
 
@@ -69,9 +72,7 @@
 
           </ul>
         </li> --}}
+
       </ul><!-- br-sideleft-menu -->
-
-
-
       <br>
     </div><!-- br-sideleft -->

@@ -58,6 +58,30 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::get('admin/pattern/image/{id}', 'Admin\PatternController@image');
 	Route::post('admin/pattern/image/update', 'Admin\PatternController@imageUpdate');
 
+    //=================== Department ========================//
+	Route::get('admin/department/index', 'Admin\DepartmentController@index');
+	Route::get('admin/department/create', 'Admin\DepartmentController@create');
+	Route::post('admin/department/store', 'Admin\DepartmentController@store');
+	Route::get('admin/department/edit/{id}', 'Admin\DepartmentController@edit');
+	Route::post('admin/department/update/{id}', 'Admin\DepartmentController@update');
+	Route::get('admin/department/delete/{id}', 'Admin\DepartmentController@destroy');
+
+    //=================== Teacher ========================//
+	Route::get('admin/teacher/index', 'Admin\TeacherController@index');
+	Route::get('admin/teacher/create', 'Admin\TeacherController@create');
+	Route::post('admin/teacher/store', 'Admin\TeacherController@store');
+	Route::get('admin/teacher/edit/{id}', 'Admin\TeacherController@edit');
+	Route::post('admin/teacher/update/{id}', 'Admin\TeacherController@update');
+	Route::get('admin/teacher/delete/{id}', 'Admin\TeacherController@destroy');
+
+    //=================== Student ========================//
+	Route::get('admin/student/index', 'Admin\StudentController@index');
+	Route::get('admin/student/create', 'Admin\StudentController@create');
+	Route::post('admin/student/store', 'Admin\StudentController@store');
+	Route::get('admin/student/edit/{id}', 'Admin\StudentController@edit');
+	Route::post('admin/student/update/{id}', 'Admin\StudentController@update');
+	Route::get('admin/student/delete/{id}', 'Admin\StudentController@destroy');
+
 });
 
 
