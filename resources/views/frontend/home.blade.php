@@ -36,8 +36,8 @@
             <div class="col-md-12">
               <h2 class="text-uppercase title">ABOUT CTT</h2>
               <p class="text-uppercase mb-0">OUR HISTORY & PRESENT</p>
-			  <img src="{{ asset('frontend/images/line.png') }}" alt="" class="line">
-			</div>
+      			  <img src="{{ asset('frontend/images/line.png') }}" alt="" class="line">
+      			</div>
           </div>
         </div>
         <div class="row mtli-row-clearfix">
