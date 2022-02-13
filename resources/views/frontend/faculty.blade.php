@@ -11,9 +11,6 @@
 
     <!-- Section: inner-header -->
     @include('frontend.includes.inner-header', ['title' => 'Faculty', 'breadcrumb' => 'Faculty'])
-
-
-
     <!-- Section: chairman -->
 
     <!-- Section: chairman -->

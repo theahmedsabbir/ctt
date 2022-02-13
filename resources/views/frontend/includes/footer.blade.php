@@ -16,13 +16,12 @@
                             <div class="row">
                                 <div class="col-sm-6 col-md-3">
                                     <div class="widget dark">
-                                        <h4 class="widget-title line-bottom-theme-colored-2">About Us</h4>
+                                        <h4 class="widget-title line-bottom-theme-colored-2">Important Links</h4>
                                         <ul class="angle-double-right list-border">
-                                            <li><a href="#">Email Marketing</a></li>
-                                            <li><a href="#">Email Marketing</a></li>
-                                            <li><a href="#">Campaigns</a></li>
-                                            <li><a href="#">Terms and Conditions</a></li>
-                                            <li><a href="#">Offline</a></li>
+                                            <li><a href="#">BSDI</a></li>
+                                            <li><a href="#">Professional Development Course</a></li>
+                                            <li><a href="#">DUET</a></li>
+                                            <li><a href="#">Citizen Charter</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -30,11 +29,9 @@
                                     <div class="widget dark">
                                         <h4 class="widget-title line-bottom-theme-colored-2">Administration</h4>
                                         <ul class="angle-double-right list-border">
-                                            <li><a href="#">Email Marketing</a></li>
-                                            <li><a href="#">Email Marketing</a></li>
-                                            <li><a href="#">Campaigns</a></li>
-                                            <li><a href="#">Terms and Conditions</a></li>
-                                            <li><a href="#">Offline</a></li>
+                                            <li><a href="https://corona.gov.bd/">Corona Information</a></li>
+                                            <li><a href="http://www.bteb.gov.bd/">BTEB</a></li>
+                                            <li><a href="#">Our Blog</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -42,11 +39,11 @@
                                     <div class="widget dark">
                                         <h4 class="widget-title line-bottom-theme-colored-2">Academic</h4>
                                         <ul class="angle-double-right list-border">
-                                            <li><a href="#">Email Marketing</a></li>
-                                            <li><a href="#">Email Marketing</a></li>
-                                            <li><a href="#">Campaigns</a></li>
-                                            <li><a href="#">Terms and Conditions</a></li>
-                                            <li><a href="#">Offline</a></li>
+                                            <li><a href="{{ url('/academic/calendar') }}">Calendar</a></li>
+                                            <li><a href="{{ url('/academic/class-routine') }}">class routine</a></li>
+                                            <li><a href="{{ url('/academic/exam-routine') }}">exam routine</a></li>
+                                            <li><a href="{{ url('/academic/public-exam-result') }}">Public Exam Result</a></li>
+                                            <li><a href="{{ url('/academic/institutional-result') }}">Institutional Result</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -54,11 +51,11 @@
                                     <div class="widget dark">
                                         <h4 class="widget-title line-bottom-theme-colored-2">Department</h4>
                                         <ul class="angle-double-right list-border">
-                                            <li><a href="#">Email Marketing</a></li>
-                                            <li><a href="#">Email Marketing</a></li>
-                                            <li><a href="#">Campaigns</a></li>
-                                            <li><a href="#">Terms and Conditions</a></li>
-                                            <li><a href="#">Offline</a></li>
+                                            <li><a href="#">Computer technology</a></li>
+                                            <li><a href="#">Electrical technology</a></li>
+                                            <li><a href="#">Civil technology</a></li>
+                                            <li><a href="#">Textile technology</a></li>
+                                            <li><a href="#">Power technology</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -66,11 +63,10 @@
                                     <div class="widget dark">
                                         <h4 class="widget-title line-bottom-theme-colored-2">Admission</h4>
                                         <ul class="angle-double-right list-border">
-                                            <li><a href="#">Email Marketing</a></li>
-                                            <li><a href="#">Email Marketing</a></li>
-                                            <li><a href="#">Campaigns</a></li>
-                                            <li><a href="#">Terms and Conditions</a></li>
-                                            <li><a href="#">Offline</a></li>
+                                            <li><a href="#">Student Admission</a></li>
+                                            <li><a href="#">Student Support</a></li>
+                                            <li><a href="#">Payment & Refund</a></li>
+                                            <li><a href="#">FAQ</a></li>
                                         </ul>
                                     </div>
                                 </div>

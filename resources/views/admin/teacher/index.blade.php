@@ -5,10 +5,10 @@
 <div class="br-pagetitle">
 	<i class="icon ion-ios-list-outline"></i>
 	<div>
-	  <h4>Manage Teacher</h4>
+	  <h4>Manage Faculty member</h4>
 	  <p class="mg-b-0">
 	  	<a href="{{ url('admin/dashboard') }}">Dashboard</a>
-	  	/ Teachers /
+	  	/ Faculty /
 	  </p>
 	</div>
 </div>
@@ -50,10 +50,10 @@
 <div class="br-pagetitle">
 	<i class="icon ion-ios-list-outline"></i>
 	<div>
-	  <h4>Add teacher</h4>
+	  <h4>Add faculty member</h4>
 	  <p class="mg-b-0">
 	  	<a href="{{ url('admin/dashboard') }}">Dashboard</a>
-	  	/ <a href="{{ url('admin/teacher/index') }}">Teachers</a> / Create
+	  	/ <a href="{{ url('admin/teacher/index') }}">Faculty member's</a> / Create
 	  </p>
 	</div>
 </div>
@@ -117,6 +117,19 @@
 	  					<div class="text-danger">{{ $errors->first('designation') }}</div>
 	  				@endif
       			</div>
+                  <div class="form-group">
+                    <label for="">As A</label>
+                    <select class="form-control" name="type" id="type">
+                        <option selected disabled>Select e Membar type</option>
+                        <option value="chairmen">Chairmen</option>
+                        <option value="principal">Principal</option>
+                        <option value="vice-principal">Vice Principal</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                    @if ($errors->has('department_id'))
+                        <div class="text-danger">{{ $errors->first('department_id') }}</div>
+                    @endif
+                </div>
                   <div class="form-group">
                     <label for="">Joining date</label>
                     <input type="date" name="joining_date" value="" class="form-control" placeholder="joining date" required>
@@ -207,6 +220,19 @@
                     <input type="text" name="designation" value="{{ $teacher['data']->teacher->designation }}" class="form-control" placeholder="Designation" required>
                     @if ($errors->has('designation'))
                         <div class="text-danger">{{ $errors->first('designation') }}</div>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <label for="">As A</label>
+                    <select class="form-control" name="type" id="type">
+                        <option selected disabled>Select e Member type</option>
+                        <option value="chairman" {{ $teacher['data']->teacher->type == 'chairmen' ? 'selected' : '' }}>Chairman</option>
+                        <option value="principal" {{ $teacher['data']->teacher->type == 'principal' ? 'selected' : '' }}>Principal</option>
+                        <option value="vice-principal" {{ $teacher['data']->teacher->type == 'vice-principal' ? 'selected' : '' }}>Vice Principal</option>
+                        <option value="teacher" {{ $teacher['data']->teacher->type == 'teacher' ? 'selected' : '' }}>Teacher</option>
+                    </select>
+                    @if ($errors->has('type'))
+                        <div class="text-danger">{{ $errors->first('type') }}</div>
                     @endif
                 </div>
                 <div class="form-group">

@@ -18,6 +18,7 @@ class CreateTeachersTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('department_id');
             $table->string('designation');
+            $table->string('type');
             $table->timestamp('joining_date');
             $table->float('salary', 8, 2);
             $table->foreign('user_id')
@@ -25,7 +26,7 @@ class CreateTeachersTable extends Migration
                     ->onDelete('cascade');
             $table->timestamps();
 
-            
+
         });
     }
 

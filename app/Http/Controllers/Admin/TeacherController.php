@@ -39,6 +39,7 @@ class TeacherController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'designation' => 'required',
+            'type' => 'required|string',
             'address' => 'required',
             'department_id' => 'required|integer',
             'joining_date' => 'required',
@@ -67,6 +68,7 @@ class TeacherController extends Controller
                 $new_teacher->user_id = $teacher->id;
                 $new_teacher->department_id = $request->department_id;
                 $new_teacher->designation = $request->designation;
+                $new_teacher->type = $request->type;
                 $new_teacher->joining_date = $request->joining_date;
                 $new_teacher->salary = $request->salary;
                 $new_teacher->save();
@@ -93,6 +95,7 @@ class TeacherController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'designation' => 'required',
+            'type' => 'required|string',
             'address' => 'required',
             'department_id' => 'required|integer',
             'joining_date' => 'required',
@@ -125,6 +128,7 @@ class TeacherController extends Controller
             $update_teacher->department_id = $request->department_id;
             $update_teacher->joining_date = $request->joining_date;
             $update_teacher->designation = $request->designation;
+            $update_teacher->type = $request->type;
             $update_teacher->salary = $request->salary;
             $update_teacher->save();
 

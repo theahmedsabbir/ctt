@@ -7,6 +7,7 @@ use App\Models\File;
 use App\Models\Installer;
 use App\Models\Order;
 use App\Models\SpecialOffer;
+use App\Models\Teacher;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,13 @@ class FrontendController extends Controller
         return view('frontend.contact');
     }
     public function administrative(){
-        return view('frontend.administrative');
+        $data = [
+            'chairmen' => Teacher::where('type', 'chairmen')->first(),
+            'principal' => Teacher::where('type', 'principal')->first(),
+            'vice_principal' => Teacher::where('type', 'vice-principal')->first(),
+            'stuff' => User::with('teacher')->where('role_id', 4)->get()
+        ];
+        return view('frontend.administrative', compact('data'));
     }
     public function faculty(){
         $teacher = User::where('role_id', 2)->orderBy('created_at', 'desc')->get();
