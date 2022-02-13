@@ -21,6 +21,8 @@ class CreateAccountsTable extends Migration
             $table->float('paid');
             $table->float('due');
             $table->timestamps();
+
+            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

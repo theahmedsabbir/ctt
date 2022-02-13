@@ -32,10 +32,10 @@
               <i class="menu-item-icon icon ion-android-person tx-24"></i>
               <span class="menu-item-label">Roles</span>
             </a><!-- br-menu-link -->
-            <ul class="br-menu-sub" style="{{ Request::is('admin/admin/role*') ? 'display: block;' : 'display: none;'}}">
+            <ul class="br-menu-sub" style="{{ Request::is('admin/role*') ? 'display: block;' : 'display: none;'}}">
 
               <li class="sub-item">
-                <a href="{{ url('admin/admin/role/index') }}" class="sub-link {{ Request::is('admin/admin/role/*') ? 'active' : ''}}">Roles</a>
+                <a href="{{ url('admin/role/index') }}" class="sub-link {{ Request::is('admin/role/*') ? 'active' : ''}}">Roles</a>
               </li>
 
             </ul>
@@ -123,6 +123,19 @@
 
               <li class="sub-item">
                 <a href="{{ url('admin/post/create') }}" class="sub-link {{ Request::is('admin/post/create') ? 'active' : ''}}">Add</a>
+              </li>
+            </ul>
+          </li>
+          <li class="br-menu-item">
+            <a href="#" class="br-menu-link with-sub {{ Request::is('admin/account*') ? 'show-sub' : ''}}">
+              <i class="menu-item-icon icon ion-ios-list-outline tx-24"></i>
+              {{-- <i class="menu-item-icon fa fa-star tx-16"></i> --}}
+              <span class="menu-item-label">Accounts</span>
+            </a><!-- br-menu-link -->
+            <ul class="br-menu-sub" style="{{ Request::is('admin/account*') ? 'display: block;' : 'display: none;'}}">
+
+              <li class="sub-item">
+                <a href="{{ url('admin/account/index') }}" class="sub-link {{ Request::is('admin/account/index') ? 'active' : ''}}">Manage</a>
               </li>
             </ul>
           </li>

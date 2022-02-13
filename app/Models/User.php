@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Account;
 use App\Models\Role;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
@@ -23,5 +24,9 @@ class User extends Model
     public function student()
     {
         return $this->hasOne(Student::class)->with('department');
+    }
+    public function accounts()
+    {
+        return $this->hasMany(Account::class, 'student_id');
     }
 }

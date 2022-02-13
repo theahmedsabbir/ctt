@@ -132,10 +132,13 @@
                                                 <a href="{{ url('admin/login') }}">Admin</a>
                                             </li>
                                             <li>
-                                                <a href="#">Teacher</a>
+                                                <a href="{{ url('teacher/login') }}">Teacher</a>
                                             </li>
                                             <li>
-                                                <a href="#">Student</a>
+                                                <a href="{{ url('student/login') }}">Student</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('stuff/login') }}">Stuff</a>
                                             </li>
                                     </li>
 {{--                                     <li class="">

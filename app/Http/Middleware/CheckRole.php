@@ -29,7 +29,7 @@ class CheckRole
 
         // if above is false
         // if url_module is in the role permission set, then let it proceed
-        $role = Role::where('slug', Session::get('admin_role'))->first();
+        $role = Role::where('role', Session::get('admin_role'))->first();
 
         // dd(json_decode($role->permissions));
         if($role != null){

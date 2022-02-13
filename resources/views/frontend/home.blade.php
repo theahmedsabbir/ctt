@@ -71,71 +71,87 @@
               <div class="col-md-12">
                   <div class="row">
                         <div class="col-md-4">
-                            <div class="round">
-                                <img src="{{ asset('/frontend/images/Vector.png') }}" class="ctt-img" />
-                            </div>
-                            <div class="export">Expert</div>
-                            <span class="export">Instructors</span>
+                            <a href="{{ url('/faculty') }}">                              
+                                <div class="round">
+                                    <img src="{{ asset('/frontend/images/Vector.png') }}" class="ctt-img" />
+                                </div>
+                                <div class="export">Expert</div>
+                                <span class="export">Instructors</span>
+                            </a>
                             <p class="">
                                 Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
                             </p>
                         </div>
                         <div class="col-md-4">
-                            <div class="round">
-                                <img src="{{ asset('/frontend/images/Vector (1).png') }}" class="ctt-img1" />
-                            </div>
-                            <div class="export">Popular</div>
-                            <span class="export" style="margin-left: 39px;">Courses</span>
+                            <a href="{{ url('academic/course-structure') }}">
+                              
+                              <div class="round">
+                                  <img src="{{ asset('/frontend/images/Vector (1).png') }}" class="ctt-img1" />
+                              </div>
+                              <div class="export">Popular</div>
+                              <span class="export" style="margin-left: 39px;">Courses</span>
+
+                            </a>
                             <p class="">
                                 Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
                             </p>
                         </div>
                         <div class="col-md-4">
-                            <div class="round" style="margin-left: 30px;">
-                                <img src="{{ asset('/frontend/images/Vector (2).png') }}" class="ctt-img2" />
-                            </div>
-                                <div class="export-3">Modern</div>
-                                <span class="export-33" style="margin-left: 61px;">Laboratory</span>
-                                <p class="export-333">
-                                    Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
-                                </p>
-                            </div>
+                            <a href="{{ url('facilities/lab') }}">                                
+                              <div class="round" style="margin-left: 30px;">
+                                  <img src="{{ asset('/frontend/images/Vector (2).png') }}" class="ctt-img2" />
+                              </div>
+                              <div class="export-3">Modern</div>
+                              <span class="export-33" style="margin-left: 61px;">Laboratory</span>
+                            </a>
+                            <p class="export-333">
+                                Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
+                            </p>
+                          </div>
                         </div>
                   </div>
               </div>
               <div class="col-md-12" style="margin-left: 85px;">
                 <div class="row">
                       <div class="col-md-4">
-                          <div class="round">
-                              <img src="{{ asset('/frontend/images/Vector (3).png') }}" class="ctt-img3" />
-                          </div>
-                          <div class="export">Hostel</div>
-                          <span class="export" style="margin-left: 39px;">Facilites</span>
+                          <a href="{{ url('facilities/hostel') }}">                            
+                            <div class="round">
+                                <img src="{{ asset('/frontend/images/Vector (3).png') }}" class="ctt-img3" />
+                            </div>
+                            <div class="export">Hostel</div>
+                            <span class="export" style="margin-left: 39px;">Facilites</span>
+                          </a>
                           <p class="">
                               Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
                           </p>
                       </div>
                       <div class="col-md-4">
-                          <div class="round">
-                              <img src="{{ asset('/frontend/images/Vector (4).png') }}" class="ctt-img4" />
-                          </div>
-                          <div class="export">Popular</div>
-                          <span class="export" style="margin-left: 39px;">Courses</span>
+                          <a href="{{ url('about-us') }}">
+                            
+                            <div class="round">
+                                <img src="{{ asset('/frontend/images/Vector (4).png') }}" class="ctt-img4" />
+                            </div>
+                            <div class="export">Popular</div>
+                            <span class="export" style="margin-left: 39px;">Courses</span>
+                          </a>
                           <p class="">
                               Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
                           </p>
                       </div>
                       <div class="col-md-4">
-                          <div class="round">
-                              <img src="{{ asset('/frontend/images/Vector (5).png') }}" class="ctt-img5" />
-                          </div>
-                              <div class="export" style="margin-left: 60px;">Job</div>
-                              <span class="export">Opportunities</span>
-                              <p class="">
-                                  Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
-                              </p>
-                          </div>
+                        <a href="{{ url('facilities/job') }}">
+                          
+                            <div class="round">
+                                <img src="{{ asset('/frontend/images/Vector (5).png') }}" class="ctt-img5" />
+                            </div>
+                            <div class="export" style="margin-left: 60px;">Job</div>
+                            <span class="export">Opportunities</span>
+                            <p class="">
+                                Lorem ipsum dolor sit amet,<br/> consectetur adipiscing elit.<br/> Fermentum mattis est ac rutrum.
+                            </p>
+                        </a>
                       </div>
+                    </div>
                 </div>
             </div>
           </div>

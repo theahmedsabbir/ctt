@@ -1,6 +1,9 @@
 @extends('admin.template.master')
 
 @section('content')
+{{-- @if ($errors->any()) --}}
+  {{-- @dd($errors) --}}
+{{-- @endif --}}
 @if ($student['page'] == 'index')
 <div class="br-pagetitle">
 	<i class="icon ion-ios-list-outline"></i>
@@ -36,8 +39,53 @@
                 <td class="">{{ $student->student->department->name ?? '' }}</td>
                 <td class="">
                     <a href="{{ url('/admin/student/edit/'.$student->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                    <a class="btn btn-sm btn-info text-white"  data-toggle="modal" data-target="#accounts{{ $student->id }}">Accounts</a>
                     <a href="{{ url('/admin/student/delete/'.$student->id) }}" onclick="return confirm('Are you sure delete this information?')" class="btn btn-sm btn-danger">Delete</a>
                 </td>
+
+                <!-- Modal -->
+
+                  <div class="modal fade" id="accounts{{ $student->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <form action="{{ url('/admin/student/account/'.$student->id) }}" method="POST">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalScrollableTitle">Add Accounts For {{ $student->name }}</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            @csrf                       
+
+                          <!-- semester -->
+                          <div class="col-md-12 col-12 form-group">
+                              <label for="semester" class="text-capitalize">semester</label><span class="require-span">*</span>
+                              <input type="text" class="form-control" name="semester" required>
+                          </div>
+                
+                          <!-- total -->
+                          <div class="col-md-12 col-12 form-group">
+                              <label for="total" class="text-capitalize">total</label><span class="require-span">*</span>
+                              <input type="number" step="0.01" class="form-control" name="total" required>
+                          </div>
+                
+                          <!-- paid -->
+                          <div class="col-md-12 col-12 form-group">
+                              <label for="paid" class="text-capitalize">paid</label><span class="require-span">*</span>
+                              <input type="number" step="0.01" class="form-control" name="paid" required>
+                          </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                </form>
+                    </div>
+                  </div>
             </tr>
            @endforeach
           </tbody>

@@ -18,28 +18,28 @@ class DatabaseSeeder extends Seeder
         DB::table('roles')->insert([
         		'id' => 1,
                 'role' => 'admin',
-                'permissions' => 'all',
+                'permissions' => null,
         ]);
         DB::table('roles')->insert([
         		'id' => 2,
                 'role' => 'teacher',
-                'permissions' => 'all',
+                'permissions' => null,
         ]);
         DB::table('roles')->insert([
         		'id' => 3,
                 'role' => 'student',
-                'permissions' => 'all',
+                'permissions' => null,
         ]);
         DB::table('roles')->insert([
         		'id' => 4,
                 'role' => 'stuff',
-                'permissions' => 'all',
+                'permissions' => null,
         ]);
         DB::table('users')->insert([
                 'name' => 'Admin',
                 'role_id' => 1,
-                'email' => 'admin@admin.com',
-                'password' => Hash::make('11'),
+                'email' => 'admin@cttedu.org',
+                'password' => bcrypt('adminofctt'),
                 'is_active' => 1,
         ]);
     }

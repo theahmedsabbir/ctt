@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Account;
 use App\Models\Department;
 use App\Models\Student;
 use App\Models\User;
 use Exception;
-use Illuminate\Http\Request;
 use Hash;
+use Illuminate\Http\Request;
 use Session;
 
 class StudentController extends Controller
@@ -43,7 +44,8 @@ class StudentController extends Controller
             'address' => 'required',
             'department_id' => 'required|integer',
             'shift' => 'required',
-            'password' => 'required|min:8|max:10',
+            'password' => 'required',
+            'avatar' => 'required',
         ]);
 
         try{
@@ -133,6 +135,42 @@ class StudentController extends Controller
             return redirect()->back()->withSuccess('Student has been updated.');
         }catch(Exception $exception){
             return redirect()->back()->withError($exception->getMessage());
+        }
+    }
+
+    public function accountUpdate(Request $request, $id)
+    {
+
+        try{
+            $student = User::find($id);
+
+            if($student == null){
+                return redirect()->back();
+            }
+
+            $account = $student->accounts->where('semester', $request->semester)->first();
+
+            if ($account == null) {
+                $account = new Account;
+
+                $account->student_id = $student->id;
+                $account->semester = $request->semester;
+                $account->total = $request->total;
+                $account->paid = $request->paid;
+                $account->due = $account->total - $account->due;
+            }else{
+
+                $account->total = $request->total;
+                $account->paid = $request->paid;
+                $account->due = $account->total - $account->paid;
+            }
+
+            $account->save();
+
+            return redirect()->back()->with('Success','Account has been updated.');
+        }catch(Exception $exception){
+            session()->flash('Error', $exception->getMessage());
+            return redirect()->back();
         }
     }
 

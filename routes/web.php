@@ -38,15 +38,21 @@ Route::get('flush', function() {
 });
 // admin routes
 
-Route::get('/admin/login', 'Admin\AdminController@showLoginForm');
+Route::get('/admin/login', 'Admin\AdminController@showLoginForm')->name('admin');
+Route::get('/teacher/login', 'Admin\AdminController@showLoginForm')->name('teacher');
+Route::get('/student/login', 'Admin\AdminController@showLoginForm')->name('student');
+Route::get('/stuff/login', 'Admin\AdminController@showLoginForm')->name('stuff');
 Route::post('/admin/login', 'Admin\AdminController@login');
 
-//admin route required for frontend
-Route::post('admin/installer/store', 'Admin\InstallerController@store');
-
-Route::group(['middleware' => ['admin']], function(){
+Route::group(['middleware' => ['admin', 'check_role']], function(){
 	Route::get('/admin/dashboard', 'Admin\AdminController@dashboard');
 	Route::post('/admin/logout', 'Admin\AdminController@logout');
+
+
+    //=================== Role ========================//
+	Route::get('admin/role/index', 'Admin\RoleController@index');
+	Route::post('admin/role/update/{id}', 'Admin\RoleController@update');
+
 
 	// pattern //dummy routes
 	Route::get('admin/pattern/index', 'Admin\PatternController@index');
@@ -87,6 +93,7 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::get('admin/student/edit/{id}', 'Admin\StudentController@edit');
 	Route::post('admin/student/update/{id}', 'Admin\StudentController@update');
 	Route::get('admin/student/delete/{id}', 'Admin\StudentController@destroy');
+	Route::post('admin/student/account/{id}', 'Admin\StudentController@accountUpdate');
 
 	//=================== Post ========================//
 	Route::get('admin/post/index', 'Admin\FileController@index');
@@ -95,6 +102,12 @@ Route::group(['middleware' => ['admin']], function(){
 	Route::get('admin/post/edit/{id}', 'Admin\FileController@edit');
 	Route::post('admin/post/update/{id}', 'Admin\FileController@update');
 	Route::post('admin/post/delete/{id}', 'Admin\FileController@delete');
+
+	//=================== Account ========================//
+	Route::get('admin/account/index', 'Admin\AccountController@index');
+	Route::get('admin/account/edit/{id}', 'Admin\AccountController@edit');
+	Route::post('admin/account/update/{id}', 'Admin\AccountController@update');
+	Route::post('admin/account/delete/{id}', 'Admin\AccountController@delete');
 
 });
 
@@ -112,6 +125,9 @@ Route::get('facilities/lab', 'FrontendController@lab');
 Route::get('facilities/hostel', 'FrontendController@hostel');
 Route::get('facilities/scholarship', 'FrontendController@scholarship');
 Route::get('facilities/job', 'FrontendController@job');
+
+// search
+Route::get('search', 'FrontendController@search');
 
 
 // dynamic

@@ -91,13 +91,11 @@
           data-responsive="off"
           style="z-index: 5; white-space: nowrap; letter-spacing:1px;margin-top:80px;">
 
-          	<form action="">
+          	<form action="{{ url('/search') }}">
                 <div id="myOverlay" class="overlay">
                     <div class="overlay-content">
-                      <form action="action_page.php">
-                        <input type="text" placeholder="Search Here.." name="search" class="searchInput">
+                        <input type="text" placeholder="Search Department Here.." name="search" class="searchInput">
                         <button type="submit" class="searchbtn">Search</button>
-                      </form>
                     </div>
                   </div>
           	</form>

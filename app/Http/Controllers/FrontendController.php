@@ -74,4 +74,13 @@ class FrontendController extends Controller
 
         return view('frontend.dynamic.list', compact('files', 'type'));
     }
+    public function search(Request $request){
+        $results = Department::
+                        where('name', 'like', '%' . $request->search . '%')
+                        // ->where('description', 'like', '%' . $request->search . '%')
+                        ->get();
+        $type = 'Search';
+
+        return view('frontend.dynamic.search', compact('results', 'type'));
+    }
 }

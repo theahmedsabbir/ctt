@@ -16,7 +16,7 @@
 <div class="main-content">
 
     <!-- Section: inner-header -->
-    @include('frontend.includes.inner-header', ['title' => 'Chairman\'s Message', 'breadcrumb' => 'Chairman\'s Message'])
+    @include('frontend.includes.inner-header', ['title' => 'Principal\'s Message', 'breadcrumb' => 'Principal\'s Message'])
 
 
     <section id="courses" class="chairman">
