@@ -277,6 +277,13 @@ class TeacherController extends Controller
     public function stuff_destroy($id)
     {
         $stuff = User::find($id);
+
+
+
+        foreach (Teacher::where('user_id', $stuff->id)->get() as $the_teacher) {
+            $the_teacher->delete();
+        }
+
         $stuff->delete();
         return redirect()->back()->withSuccess('Stuff has been deleted.');
     }

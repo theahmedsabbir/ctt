@@ -10,22 +10,22 @@
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
 
-        <label class="sidebar-label pd-x-10 mg-t-25 mg-b-20 tx-info">Registrations</label>
+        <label class="sidebar-label pd-x-10 mg-t-25 mg-b-20 tx-info">Manage</label>
 
 
         {{-- @dd(Session::all()) --}}
 
         {{-- get the role and permission array --}}
         @php
-          // $role = App\Models\Role::where('slug', Session::get('admin_role'))->first(); // ei admin er data
-          // $role_permissions = [];
-          // if($role != null && $role->permissions != null){
-          //   $role_permissions = json_decode($role->permissions); // ei admin er ei roler permission ki ki
-          // }
+          $role = App\Models\Role::where('role', Session::get('admin_role'))->first(); // ei admin er data
+          $role_permissions = [];
+          if($role != null && $role->permissions != null){
+            $role_permissions = json_decode($role->permissions); // ei admin er ei roler permission ki ki
+          }
         @endphp
 
         {{-- admins --}}
-        {{-- @if (Session::get('admin_role') == 'admin' || in_array('admin', $role_permissions)) --}}
+        @if (Session::get('admin_role') == 'admin' || in_array('role', $role_permissions))
 
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
@@ -41,6 +41,9 @@
             </ul>
           </li>
 
+        @endif
+
+        @if (Session::get('admin_role') == 'admin' || in_array('department', $role_permissions))
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
               <i class="menu-item-icon icon ion-android-list tx-24"></i>
@@ -58,6 +61,9 @@
               </li>
             </ul>
           </li>
+        @endif
+
+        @if (Session::get('admin_role') == 'admin' || in_array('teacher', $role_permissions))
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
               <i class="menu-item-icon icon ion-android-person tx-24"></i>
@@ -75,6 +81,8 @@
               </li>
             </ul>
           </li>
+        @endif
+        @if (Session::get('admin_role') == 'admin' || in_array('stuff', $role_permissions))        
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
               <i class="menu-item-icon icon ion-android-person tx-24"></i>
@@ -92,6 +100,8 @@
               </li>
             </ul>
           </li>
+        @endif
+        @if (Session::get('admin_role') == 'admin' || in_array('student', $role_permissions))        
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
               <i class="menu-item-icon icon ion-android-person tx-24"></i>
@@ -109,6 +119,8 @@
               </li>
             </ul>
           </li>
+        @endif
+        @if (Session::get('admin_role') == 'admin' || in_array('post', $role_permissions))        
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/admin*') ? 'show-sub' : ''}}">
               <i class="menu-item-icon icon ion-compose tx-24"></i>
@@ -126,6 +138,8 @@
               </li>
             </ul>
           </li>
+        @endif
+        @if (Session::get('admin_role') == 'admin' || in_array('account', $role_permissions))        
           <li class="br-menu-item">
             <a href="#" class="br-menu-link with-sub {{ Request::is('admin/account*') ? 'show-sub' : ''}}">
               <i class="menu-item-icon icon ion-ios-list-outline tx-24"></i>
@@ -139,6 +153,8 @@
               </li>
             </ul>
           </li>
+        @endif
+
       </ul><!-- br-sideleft-menu -->
       <br>
     </div><!-- br-sideleft -->

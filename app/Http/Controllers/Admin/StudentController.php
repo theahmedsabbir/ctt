@@ -183,6 +183,11 @@ class StudentController extends Controller
         if (file_exists('avatar/'.$student->avatar)){
             unlink('avatar/'.$student->avatar);
         }
+
+        foreach (Student::where('user_id', $student->id)->get() as $the_student) {
+            $the_student->delete();
+        }
+
         $student->delete();
         return redirect()->back()->withSuccess('Student has been deleted.');
     }
