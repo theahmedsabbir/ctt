@@ -18,10 +18,9 @@
                                     <div class="widget dark">
                                         <h4 class="widget-title line-bottom-theme-colored-2">Important Links</h4>
                                         <ul class="angle-double-right list-border">
-                                            <li><a href="#">BSDI</a></li>
+                                            <li><a href="https://bsdi-bd.org/">BSDI</a></li>
                                             <li><a href="#">Professional Development Course</a></li>
-                                            <li><a href="#">DUET</a></li>
-                                            <li><a href="#">Citizen Charter</a></li>
+                                            <li><a href="https://www.duet.ac.bd/">DUET</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -64,9 +63,10 @@
                                         <h4 class="widget-title line-bottom-theme-colored-2">Admission</h4>
                                         <ul class="angle-double-right list-border">
                                             <li><a href="#">Student Admission</a></li>
-                                            <li><a href="#">Student Support</a></li>
-                                            <li><a href="#">Payment & Refund</a></li>
-                                            <li><a href="#">FAQ</a></li>
+                                            <li><a href="{{ url('/admission/admission-circular') }}">Admission Circular</a></li>
+                                            <li><a href="{{ url('/admission/admission-form') }}">Admission Form</a></li>
+                                            <li><a href="{{ url('/admission/admission-requirement') }}">Admission Requirement</a></li>
+                                            <li><a href="{{ url('/admission/prospectus') }}">Prospectus</a></li>
                                         </ul>
                                     </div>
                                 </div>
