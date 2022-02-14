@@ -126,8 +126,8 @@
                         <option value="vice-principal">Vice Principal</option>
                         <option value="teacher">Teacher</option>
                     </select>
-                    @if ($errors->has('department_id'))
-                        <div class="text-danger">{{ $errors->first('department_id') }}</div>
+                    @if ($errors->has('type'))
+                        <div class="text-danger">{{ $errors->first('type') }}</div>
                     @endif
                 </div>
                   <div class="form-group">

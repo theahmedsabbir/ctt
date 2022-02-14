@@ -9,6 +9,7 @@ use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Hash;
+use Illuminate\Support\Facades\DB;
 use Session;
 class TeacherController extends Controller
 {
@@ -47,6 +48,9 @@ class TeacherController extends Controller
             'password' => 'required|min:8|max:10',
         ]);
 
+        DB::transaction(function(){
+
+        });
         try{
             $avatar = $request->name . time().'.'. $request->avatar->extension();
             $request->avatar->move(public_path('avatar/'), $avatar);
