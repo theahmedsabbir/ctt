@@ -67,27 +67,27 @@
                                   <tbody>
                                     <tr>
                                       <td style="text-transform: capitalize;">department</td>
-                                      <td><input type="checkbox" name="permissions[]" {{ in_array('department', json_decode($role->permissions)) ? 'checked': '' }} value="department" style="cursor: pointer;"></td>
+                                      <td><input type="checkbox" name="permissions[]" {{ $role->permissions && in_array('department', json_decode($role->permissions)) ? 'checked': '' }} value="department" style="cursor: pointer;"></td>
                                     </tr>
                                     <tr>
                                       <td style="text-transform: capitalize;">teacher</td>
-                                      <td><input type="checkbox" name="permissions[]" {{ in_array('teacher', json_decode($role->permissions)) ? 'checked': '' }} value="teacher" style="cursor: pointer;"></td>
+                                      <td><input type="checkbox" name="permissions[]" {{ $role->permissions && in_array('teacher', json_decode($role->permissions)) ? 'checked': '' }} value="teacher" style="cursor: pointer;"></td>
                                     </tr>
                                     <tr>
                                       <td style="text-transform: capitalize;">stuff</td>
-                                      <td><input type="checkbox" name="permissions[]" {{ in_array('stuff', json_decode($role->permissions)) ? 'checked': '' }} value="stuff" style="cursor: pointer;"></td>
+                                      <td><input type="checkbox" name="permissions[]" {{ $role->permissions && in_array('stuff', json_decode($role->permissions)) ? 'checked': '' }} value="stuff" style="cursor: pointer;"></td>
                                     </tr>
                                     <tr>
                                       <td style="text-transform: capitalize;">student</td>
-                                      <td><input type="checkbox" name="permissions[]" {{ in_array('student', json_decode($role->permissions)) ? 'checked': '' }} value="student" style="cursor: pointer;"></td>
+                                      <td><input type="checkbox" name="permissions[]" {{ $role->permissions && in_array('student', json_decode($role->permissions)) ? 'checked': '' }} value="student" style="cursor: pointer;"></td>
                                     </tr>
                                     <tr>
                                       <td style="text-transform: capitalize;">post</td>
-                                      <td><input type="checkbox" name="permissions[]" {{ in_array('post', json_decode($role->permissions)) ? 'checked': '' }} value="post" style="cursor: pointer;"></td>
+                                      <td><input type="checkbox" name="permissions[]" {{ $role->permissions && in_array('post', json_decode($role->permissions)) ? 'checked': '' }} value="post" style="cursor: pointer;"></td>
                                     </tr>
                                     <tr>
                                       <td style="text-transform: capitalize;">accounts</td>
-                                      <td><input type="checkbox" name="permissions[]" {{ in_array('account', json_decode($role->permissions)) ? 'checked': '' }} value="account" style="cursor: pointer;"></td>
+                                      <td><input type="checkbox" name="permissions[]" {{ $role->permissions && in_array('account', json_decode($role->permissions)) ? 'checked': '' }} value="account" style="cursor: pointer;"></td>
                                     </tr>
                                   </tbody>
                                 </table>
