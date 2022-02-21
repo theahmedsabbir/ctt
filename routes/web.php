@@ -53,15 +53,6 @@ Route::group(['middleware' => ['admin', 'check_role']], function(){
 	Route::get('admin/role/index', 'Admin\RoleController@index');
 	Route::post('admin/role/update/{id}', 'Admin\RoleController@update');
 
-
-	// pattern //dummy routes
-	Route::get('admin/pattern/index', 'Admin\PatternController@index');
-	Route::get('admin/pattern/create', 'Admin\PatternController@create');
-	Route::post('admin/pattern/store', 'Admin\PatternController@store');
-	Route::get('admin/pattern/edit/{id}', 'Admin\PatternController@edit');
-	Route::post('admin/pattern/update/{id}', 'Admin\PatternController@update');
-	Route::post('admin/pattern/delete/{id}', 'Admin\PatternController@delete');
-
     //=================== Department ========================//
 	Route::get('admin/department/index', 'Admin\DepartmentController@index');
 	Route::get('admin/department/create', 'Admin\DepartmentController@create');

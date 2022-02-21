@@ -31,6 +31,13 @@
                 @endphp
                 @foreach (App\Models\Account::orderBy('id', 'asc')->get() as $account)
 
+                {{-- jodi student login kore tahole only nijer data dekhbe --}}
+                @php
+                  if(Session::get('admin_role') == 'student' && Session::get('admin_id') != $account->student->id ){
+                    continue;
+                  }
+                @endphp
+
                 <tr>
                   <td>{{ $loop->index + 1 }}</td>
                   <td>{{ $account->updated_at->format('d-m-Y') }}</td>
@@ -40,11 +47,14 @@
                   <td>{{ $account->paid }}</td>
                   <td>{{ $account->due }}</td>
                   <td>
-                    <a href="{{ url('admin/account/edit', $account->id) }}" class="btn btn-teal btn-sm" data-toggle="tooltip-info" data-placement="top" title="Edit"><i class="fa fa-pen" ></i></a>
-                    <form action="{{ url('admin/account/delete', $account->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure to delete?')">
-                      @csrf                      
-                      <button class="btn btn-danger btn-sm d-inline" data-toggle="tooltip-info" data-placement="top" title="Delete"><i class="fa fa-trash-alt" ></i></button>
-                    </form>
+                    
+                    @if (Session::get('admin_role') == 'admin' || Session::get('admin_role') == 'stuff')
+                      <a href="{{ url('admin/account/edit', $account->id) }}" class="btn btn-teal btn-sm" data-toggle="tooltip-info" data-placement="top" title="Edit"><i class="fa fa-pen" ></i></a>
+                      <form action="{{ url('admin/account/delete', $account->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure to delete?')">
+                        @csrf                      
+                        <button class="btn btn-danger btn-sm d-inline" data-toggle="tooltip-info" data-placement="top" title="Delete"><i class="fa fa-trash-alt" ></i></button>
+                      </form>
+                    @endif
                   </td>
                 </tr>
 

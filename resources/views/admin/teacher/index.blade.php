@@ -34,9 +34,12 @@
                 <td class="">{{ $teacher->email ?? '' }}</td>
                 <td class="">{{ $teacher->phone ?? '' }}</td>
                 <td class="">{{ $teacher->teacher->designation ?? '' }}</td>
+
                 <td class="">
-                    <a href="{{ url('/admin/teacher/edit/'.$teacher->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                    <a href="{{ url('/admin/teacher/delete/'.$teacher->id) }}" onclick="return confirm('Are you sure delete this information?')" class="btn btn-sm btn-danger">Delete</a>
+                  @if (Session::get('admin_role') == 'admin' || Session::get('admin_role') == 'stuff')
+                      <a href="{{ url('/admin/teacher/edit/'.$teacher->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                      <a href="{{ url('/admin/teacher/delete/'.$teacher->id) }}" onclick="return confirm('Are you sure delete this information?')" class="btn btn-sm btn-danger">Delete</a>
+                  @endif
                 </td>
             </tr>
            @endforeach

@@ -28,14 +28,17 @@
           <tbody>
            @foreach ($stuff['data'] as $key => $stuff)
             <tr>
-                <td class="">{{ $key+1 }}</td>
-                <td class="">{{ $stuff->name ?? '' }}</td>
-                <td class="">{{ $stuff->email ?? '' }}</td>
-                <td class="">{{ $stuff->phone ?? '' }}</td>
-                <td class="">
-                    <a href="{{ url('/admin/stuff/edit/'.$stuff->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                    <a href="{{ url('/admin/stuff/delete/'.$stuff->id) }}" onclick="return confirm('Are you sure delete this information?')" class="btn btn-sm btn-danger">Delete</a>
-                </td>
+
+                  <td class="">{{ $key+1 }}</td>
+                  <td class="">{{ $stuff->name ?? '' }}</td>
+                  <td class="">{{ $stuff->email ?? '' }}</td>
+                  <td class="">{{ $stuff->phone ?? '' }}</td>
+                  <td class="">
+                    @if (Session::get('admin_role') == 'admin' || Session::get('admin_role') == 'stuff')
+                      <a href="{{ url('/admin/stuff/edit/'.$stuff->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                      <a href="{{ url('/admin/stuff/delete/'.$stuff->id) }}" onclick="return confirm('Are you sure delete this information?')" class="btn btn-sm btn-danger">Delete</a>
+                    @endif
+                  </td>
             </tr>
            @endforeach
           </tbody>

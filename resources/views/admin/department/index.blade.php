@@ -37,8 +37,10 @@
                         {{ Str::substr($department->description, 0, 35) }}
                     </td>
                     <td>
+                      @if (Session::get('admin_role') == 'admin' || Session::get('admin_role') == 'stuff')
                         <a href="{{ url('/admin/department/edit/'.$department->id) }}" class="btn btn-sm btn-info">Edit</a>
                         <a href="{{ url('/admin/department/delete/'.$department->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                      @endif
                     </td>
                 </tr>
               @endforeach
