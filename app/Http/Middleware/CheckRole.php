@@ -19,7 +19,10 @@ class CheckRole
     public function handle($request, Closure $next)
     {
         // get url after admin/
-        $url_module = explode('/', Request::path())[1]; //current route word after admin/
+        $url_explode = explode('/', Request::path());
+        $url_module = $url_explode[1]; //current route word after admin/
+        $url_action = array_key_exists(2, $url_explode) ? $url_explode[2] : false; //url action ase kina
+
         $permitted_modules = ['dashboard', 'logout']; //default for all 
 
         // if in permitted module or role is admin, let the request go 
@@ -31,11 +34,21 @@ class CheckRole
         // if url_module is in the role permission set, then let it proceed
         $role = Role::where('role', Session::get('admin_role'))->first();
 
+        $teacher_student_roles = ['teacher', 'student'];
+
         // dd(json_decode($role->permissions));
         if($role != null){
             $role_permissions = json_decode($role->permissions); //current admin er role permissions
 
-            if ( !in_array($url_module, $role_permissions) ) { //jodi admin/ er por current route word role permission array te na thake then dont let it pass
+            //ei role er permission er moddhe ei url er module ase kina 
+            $is_module_permitted = $role_permissions && in_array($url_module, $role_permissions);
+
+            //url action thakle, teacher/student er jonno shudhu index pabe
+            $is_teacher_or_student = in_array($role->role, $teacher_student_roles);
+            $is_action_permitted = $url_action != false && $url_action == 'index';
+
+            // jodi teacher or student hoi then action check korbe
+            if ( !$is_module_permitted || ($is_teacher_or_student && !$is_action_permitted) ) { 
                 session()->flash('Error', 'You are not permitted to access this url.');
                 return redirect()->back();                
             }

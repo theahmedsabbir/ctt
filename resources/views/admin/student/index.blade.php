@@ -31,6 +31,14 @@
           </thead>
           <tbody>
            @foreach ($student['data'] as $key => $student)
+
+            {{-- jodi student login kore tahole only nijer data dekhbe --}}
+            @php
+              if(Session::get('admin_role') == 'student' && Session::get('admin_id') != $student->id ){
+                continue;
+              }
+            @endphp
+
             <tr>
                 <td class="">{{ $key+1 }}</td>
                 <td class="">{{ $student->name ?? '' }}</td>
@@ -38,9 +46,12 @@
                 <td class="">{{ $student->phone ?? '' }}</td>
                 <td class="">{{ $student->student->department->name ?? '' }}</td>
                 <td class="">
+
+                  @if (Session::get('admin_role') == 'admin' || Session::get('admin_role') == 'stuff')
                     <a href="{{ url('/admin/student/edit/'.$student->id) }}" class="btn btn-sm btn-primary">Edit</a>
                     <a class="btn btn-sm btn-info text-white"  data-toggle="modal" data-target="#accounts{{ $student->id }}">Accounts</a>
                     <a href="{{ url('/admin/student/delete/'.$student->id) }}" onclick="return confirm('Are you sure delete this information?')" class="btn btn-sm btn-danger">Delete</a>
+                  @endif
                 </td>
 
                 <!-- Modal -->

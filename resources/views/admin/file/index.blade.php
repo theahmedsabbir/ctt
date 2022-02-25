@@ -33,11 +33,15 @@
                   <td><a href="{{ asset('post/' . $file->file ) }}" target="_blank">{{ $file->file }}</a></td>
                   <td>{{ $file->link }}</td>
                   <td>
+
+                    @if (Session::get('admin_role') == 'admin' || Session::get('admin_role') == 'stuff')
                     <a href="{{ url('admin/post/edit', $file->id) }}" class="btn btn-teal btn-sm" data-toggle="tooltip-info" data-placement="top" title="Edit"><i class="fa fa-pen" ></i></a>
                     <form action="{{ url('admin/post/delete', $file->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure to delete?')">
                       @csrf                      
                       <button class="btn btn-danger btn-sm d-inline" data-toggle="tooltip-info" data-placement="top" title="Delete"><i class="fa fa-trash-alt" ></i></button>
                     </form>
+                    @endif
+                    
                   </td>
                 </tr>
                 @endforeach 

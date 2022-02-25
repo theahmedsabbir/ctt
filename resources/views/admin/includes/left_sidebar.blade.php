@@ -56,9 +56,11 @@
                 <a href="{{ url('admin/department/index') }}" class="sub-link {{ Request::is('admin/department/index') ? 'active' : ''}}">Manage</a>
               </li>
 
+              @if($role->role == 'admin' || $role->role == 'stuff')
               <li class="sub-item">
                 <a href="{{ url('admin/department/create') }}" class="sub-link {{ Request::is('admin/department/create') ? 'active' : ''}}">Add</a>
               </li>
+              @endif
             </ul>
           </li>
         @endif
@@ -76,9 +78,11 @@
                 <a href="{{ url('admin/teacher/index') }}" class="sub-link {{ Request::is('admin/teacher/index') ? 'active' : ''}}">Manage</a>
               </li>
 
+              @if($role->role == 'admin' || $role->role == 'stuff')
               <li class="sub-item">
                 <a href="{{ url('admin/teacher/create') }}" class="sub-link {{ Request::is('admin/teacher/create') ? 'active' : ''}}">Add</a>
               </li>
+              @endif
             </ul>
           </li>
         @endif
@@ -95,9 +99,11 @@
                 <a href="{{ url('admin/stuff/index') }}" class="sub-link {{ Request::is('admin/stuff/index') ? 'active' : ''}}">Manage</a>
               </li>
 
+              @if($role->role == 'admin' || $role->role == 'stuff')
               <li class="sub-item">
                 <a href="{{ url('admin/stuff/create') }}" class="sub-link {{ Request::is('admin/stuff/create') ? 'active' : ''}}">Add</a>
               </li>
+              @endif
             </ul>
           </li>
         @endif
@@ -114,9 +120,11 @@
                 <a href="{{ url('admin/student/index') }}" class="sub-link {{ Request::is('admin/student/index') ? 'active' : ''}}">Manage</a>
               </li>
 
+              @if($role->role == 'admin' || $role->role == 'stuff')
               <li class="sub-item">
                 <a href="{{ url('admin/student/create') }}" class="sub-link {{ Request::is('admin/student/create') ? 'active' : ''}}">Add</a>
               </li>
+              @endif
             </ul>
           </li>
         @endif
@@ -133,9 +141,11 @@
                 <a href="{{ url('admin/post/index') }}" class="sub-link {{ Request::is('admin/post/index') ? 'active' : ''}}">Manage</a>
               </li>
 
+              @if($role->role == 'admin' || $role->role == 'stuff')
               <li class="sub-item">
                 <a href="{{ url('admin/post/create') }}" class="sub-link {{ Request::is('admin/post/create') ? 'active' : ''}}">Add</a>
               </li>
+              @endif
             </ul>
           </li>
         @endif
