@@ -49,11 +49,7 @@ class TeacherController extends Controller
             'password' => 'required|min:8|max:10',
         ]);
 
-        DB::transaction(function(){
-
-        });
-        try{
-            $avatar = $request->name . time().'.'. $request->avatar->extension();
+        $avatar = $request->name . time().'.'. $request->avatar->extension();
             $request->avatar->move('avatar/', $avatar);
 
             $teacher = new User();
@@ -79,9 +75,6 @@ class TeacherController extends Controller
                 $new_teacher->save();
             }
             return redirect()->back()->withSuccess('Teacher has been added.');
-        }catch(Exception $exception){
-            return redirect()->back()->withError($exception->getMessage());
-        }
     }
 
     public function edit($id)

@@ -210,9 +210,15 @@
                   <label for="">Department</label>
                   <select class="form-control" name="department_id" id="department_id">
                       <option selected disabled>Select e department</option>
-                      @foreach ($teacher['department'] as $department)
-                          <option value="{{ $department->id }}" {{ $department->id == $teacher['data']->teacher->department_id ? 'selected' : '' }}>{{ $department->name }}</option>
-                      @endforeach
+                      @if ($teacher['department'])
+                        @foreach ($teacher['department'] as $department)
+                            <option value="{{ $department->id }}" {{ $department->id == $teacher['data']->teacher->department_id ? 'selected' : '' }}>{{ $department->name }}</option>
+                        @endforeach
+                        @else
+                        @foreach ($teacher['department'] as $department)
+                            <option value="{{ $department->id }}" {{ $department->id == $teacher['data']->teacher->department_id ? 'selected' : '' }}>{{ $department->name }}</option>
+                        @endforeach
+                      @endif
                   </select>
                   @if ($errors->has('department_id'))
                       <div class="text-danger">{{ $errors->first('department_id') }}</div>
@@ -220,7 +226,7 @@
               </div>
                 <div class="form-group">
                     <label for="">Designation</label>
-                    <input type="text" name="designation" value="{{ $teacher['data']->teacher->designation }}" class="form-control" placeholder="Designation" required>
+                    <input type="text" name="designation" value="{{ $teacher['data'] ? $teacher['data']->teacher->designation : '' }}" class="form-control" placeholder="Designation" required>
                     @if ($errors->has('designation'))
                         <div class="text-danger">{{ $errors->first('designation') }}</div>
                     @endif
@@ -229,10 +235,10 @@
                     <label for="">As A</label>
                     <select class="form-control" name="type" id="type">
                         <option selected disabled>Select e Member type</option>
-                        <option value="chairmen" {{ $teacher['data']->teacher->type == 'chairmen' ? 'selected' : '' }}>Chairman</option>
-                        <option value="principal" {{ $teacher['data']->teacher->type == 'principal' ? 'selected' : '' }}>Principal</option>
-                        <option value="vice-principal" {{ $teacher['data']->teacher->type == 'vice-principal' ? 'selected' : '' }}>Vice Principal</option>
-                        <option value="teacher" {{ $teacher['data']->teacher->type == 'teacher' ? 'selected' : '' }}>Teacher</option>
+                        <option value="chairmen" {{ $teacher['data']->teacher->type == 'chairmen' ? 'selected' : 'chairmen' }}>Chairman</option>
+                        <option value="principal" {{ $teacher['data']->teacher->type == 'principal' ? 'selected' : 'principal' }}>Principal</option>
+                        <option value="vice-principal" {{ $teacher['data']->teacher->type == 'vice-principal' ? 'selected' : 'vice-principal' }}>Vice Principal</option>
+                        <option value="teacher" {{ $teacher['data']->teacher->type == 'teacher' ? 'selected' : 'teacher' }}>Teacher</option>
                     </select>
                     @if ($errors->has('type'))
                         <div class="text-danger">{{ $errors->first('type') }}</div>
@@ -240,14 +246,14 @@
                 </div>
                 <div class="form-group">
                   <label for="">Joining date</label>
-                  <input type="date" name="joining_date" value="{{Carbon\Carbon::parse($teacher['data']->teacher->joining_date)->toDateString()}}" class="form-control" placeholder="joining date" required>
+                  <input type="date" name="joining_date" value="{{Carbon\Carbon::parse($teacher['data'] ? $teacher['data']->teacher->joining_date : '')->toDateString()}}" class="form-control" placeholder="joining date" required>
                   @if ($errors->has('joining_date'))
                       <div class="text-danger">{{ $errors->first('joining_date') }}</div>
                   @endif
               </div>
               <div class="form-group">
                   <label for="">Salary</label>
-                  <input type="text" name="salary" value="{{ $teacher['data']->teacher->salary }}" class="form-control" placeholder="salary : 99999" required>
+                  <input type="text" name="salary" value="{{ $teacher['data'] ? $teacher['data']->teacher->salary : '' }}" class="form-control" placeholder="salary : 99999" required>
                   @if ($errors->has('salary'))
                       <div class="text-danger">{{ $errors->first('salary') }}</div>
                   @endif
