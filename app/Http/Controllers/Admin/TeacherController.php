@@ -53,7 +53,7 @@ class TeacherController extends Controller
         });
         try{
             $avatar = $request->name . time().'.'. $request->avatar->extension();
-            $request->avatar->move(public_path('avatar/'), $avatar);
+            $request->avatar->move('avatar/', $avatar);
 
             $teacher = new User();
             $teacher->name = $request->name;
@@ -194,7 +194,7 @@ class TeacherController extends Controller
 
         try{
             $avatar = $request->name . time().'.'. $request->avatar->extension();
-            $request->avatar->move(public_path('avatar/'), $avatar);
+            $request->avatar->move('avatar/', $avatar);
 
             $stuff = new User();
             $stuff->name = $request->name;

@@ -51,7 +51,7 @@ class StudentController extends Controller
         try{
 
             $avatar = $request->name . time().'.'. $request->avatar->extension();
-            $request->avatar->move(public_path('avatar/'), $avatar);
+            $request->avatar->move('avatar/', $avatar);
 
             $student = new User();
             $student->name = $request->name;
