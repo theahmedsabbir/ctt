@@ -34,7 +34,7 @@
                     </td>
                     <td>{{ $department->name }}</td>
                     <td>
-                        {{ Str::substr($department->description, 0, 35) }}
+                        {!! Str::substr($department->description, 0, 35) !!}
                     </td>
                     <td>
                       @if (Session::get('admin_role') == 'admin' || Session::get('admin_role') == 'stuff')
