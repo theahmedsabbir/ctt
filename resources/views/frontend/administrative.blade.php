@@ -1,12 +1,16 @@
 @extends('frontend.template.master')
 
 @section('page-css')
-
+<style>
+  .img-fullwidth{
+    max-height: 200px;
+  }
+</style>
 @endsection
 
 @section('content')
 
-
+{{-- @dd($data) --}}
 <div class="main-content">
 
     <!-- Section: inner-header -->
@@ -34,7 +38,7 @@
               <div class="team-details">
                 <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">{{ $data['chairmen']->name }}</h4>
                 <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">{{ $data['chairmen']->designation }}</h6>
-                <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p>
+                {{-- <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p> --}}
               </div>
             </div>
           </div>
@@ -60,7 +64,7 @@
               <div class="team-details">
                 <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">{{ $data['principal']->name }}</h4>
                 <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">{{ $data['principal']->designation }}</h6>
-                <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p>
+                {{-- <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p> --}}
               </div>
             </div>
           </div>
@@ -79,7 +83,7 @@
               <div class="team-details">
                 <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">{{ $data['vice_principal']->name }}</h4>
                 <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">{{ $data['vice_principal']->designation }}</h6>
-                <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p>
+                {{-- <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p> --}}
               </div>
             </div>
           </div>
@@ -108,7 +112,7 @@
                   <div class="team-details">
                     <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">{{ $stuff->teacher->name ?? '' }}</h4>
                     <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">{{ $stuff->teacher->designation ?? '' }}</h6>
-                    <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p>
+                    {{-- <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p> --}}
                   </div>
                 </div>
             </div>

@@ -33,7 +33,7 @@
                   <div class="team-details">
                     <h4 class="text-uppercase text-theme-colored font-weight-600 m-5">{{ $info->name }}</h4>
                     <h6 class="text-gray font-13 font-weight-400 line-bottom-centered mt-0">{{ $info->teacher->name ?? '' }}</h6>
-                    <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p>
+                    {{-- <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. Debitis magnam placeat dignissimos saperator ellium</p> --}}
                   </div>
                 </div>
               </div>

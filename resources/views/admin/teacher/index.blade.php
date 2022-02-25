@@ -229,7 +229,7 @@
                     <label for="">As A</label>
                     <select class="form-control" name="type" id="type">
                         <option selected disabled>Select e Member type</option>
-                        <option value="chairman" {{ $teacher['data']->teacher->type == 'chairmen' ? 'selected' : '' }}>Chairman</option>
+                        <option value="chairmen" {{ $teacher['data']->teacher->type == 'chairmen' ? 'selected' : '' }}>Chairman</option>
                         <option value="principal" {{ $teacher['data']->teacher->type == 'principal' ? 'selected' : '' }}>Principal</option>
                         <option value="vice-principal" {{ $teacher['data']->teacher->type == 'vice-principal' ? 'selected' : '' }}>Vice Principal</option>
                         <option value="teacher" {{ $teacher['data']->teacher->type == 'teacher' ? 'selected' : '' }}>Teacher</option>

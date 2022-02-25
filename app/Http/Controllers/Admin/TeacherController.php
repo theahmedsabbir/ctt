@@ -15,6 +15,7 @@ class TeacherController extends Controller
 {
     public function index()
     {
+        // dd(User::with('teacher')->where('role_id', 2)->get());
         $teacher = [
             'page' => 'index',
             'data' => User::with('teacher')->where('role_id', 2)->get(),
@@ -95,6 +96,7 @@ class TeacherController extends Controller
 
     public function update(Request $request, $id)
     {
+        // return $request->all();
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
@@ -153,7 +155,7 @@ class TeacherController extends Controller
             unlink('avatar/'.$teacher->avatar);
         }
         $teacher->delete();
-        return redirect()->back()->withSuccess('Teacher has been deleted.');
+        return redirect()->back()->with('Success','Teacher has been deleted.');
     }
 
 
