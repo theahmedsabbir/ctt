@@ -24,6 +24,9 @@
                 <p>{{ isset($admin) ? $admin->email : ''}}</p>
               </div>
               <hr>
+              <ul class="list-unstyled user-profile-nav">
+                <li><a href="{{ url('admin/profile/edit') }}"><i class="icon ion-android-person"></i> Profile</a></li>
+              </ul>
               <hr>
               <ul class="list-unstyled user-profile-nav">
                 <li><a href="{{ url('/') }}"><i class="icon ion-ios-folder"></i> Go to Website</a></li>

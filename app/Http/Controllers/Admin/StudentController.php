@@ -113,6 +113,12 @@ class StudentController extends Controller
             $student->email = $request->email;
             $student->address = $request->address;
 
+
+
+            if ($request->password) {
+                $student->password = Hash::make($request->password);
+            }
+
             if (isset($request->avatar)){
                 if (file_exists('avatar/'.$student->avatar)){
                     unlink('avatar/'.$student->avatar);

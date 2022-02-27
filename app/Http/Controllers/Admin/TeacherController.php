@@ -112,6 +112,12 @@ class TeacherController extends Controller
             $teacher->email = $request->email;
             $teacher->address = $request->address;
 
+
+
+            if ($request->password) {
+                $teacher->password = Hash::make($request->password);
+            }
+
             if (isset($request->avatar)){
                 if (file_exists('avatar/'.$teacher->avatar)){
                     unlink('avatar/'.$teacher->avatar);
@@ -251,6 +257,12 @@ class TeacherController extends Controller
             $stuff->role_id = 4;
             $stuff->email = $request->email;
             $stuff->address = $request->address;
+
+
+
+            if ($request->password) {
+                $stuff->password = Hash::make($request->password);
+            }
 
             if (isset($request->avatar)){
                 if (file_exists('avatar/'.$stuff->avatar)){

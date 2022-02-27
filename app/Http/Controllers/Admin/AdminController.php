@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
 use App\Models\Admin;
+use App\Models\Department;
 use App\Models\Role;
 use App\Models\User;
+use Hash;
+use Illuminate\Http\Request;
 use Session;
 use Str;
-use Hash;
 
 class AdminController extends Controller
 {
@@ -143,7 +143,7 @@ class AdminController extends Controller
         return view('admin.admin.edit', compact('admin'));
     }
 
-    public function update(Request $request, $id){
+    public function update1(Request $request, $id){
 
         $admin = User::find($id);
 
@@ -217,6 +217,73 @@ class AdminController extends Controller
         // dd(json_encode($request->permissions));
 
         // dd($id);
+    }
+
+    public function profileEdit(){
+
+        $user = User::find(session()->get('admin_id'));
+
+        if(!$user || !$user->role) return redirect()->back()->with('Error', 'User not found');
+
+
+        if($user->role->role == 'admin') {
+            $admin = $user;
+            return view('admin.admin.edit', compact('admin'));
+        }
+        if($user->role->role == 'teacher') {            
+            $teacher = [
+                'page' => 'edit',
+                'data' => $user,
+                'department' => Department::get(),
+                'form' => 'profile_edit'
+            ];
+            return view('admin.teacher.index', compact('teacher'));
+        }
+
+        if($user->role->role == 'student') {            
+
+            $student = [
+                'page' => 'edit',
+                'data' => $user,
+                'department' => Department::get(),                
+                'form' => 'profile_edit'
+            ];
+            return view('admin.student.index', compact('student'));
+        }
+        
+        if($user->role->role == 'stuff') {     
+            $stuff = [
+                'page' => 'edit',
+                'data' => $user,
+                'department' => Department::get(),                
+                'form' => 'profile_edit'
+            ];
+            return view('admin.stuff.index', compact('stuff'));
+        }
+
+        return $user->role;
+    }
+
+    public function update(Request $request){
+        // return $request->all();
+
+        $admin = User::find(session()->get('admin_id'));
+
+        if(!$admin) return redirect()->back()->with('Error', 'Admin not found');
+
+        $admin->name    = $request->name;
+        $admin->email   = $request->email;
+        $admin->phone   = $request->phone;
+        $admin->address = $request->address;
+
+        if ($request->password) {
+            $admin->password = Hash::make($request->password);
+        }
+
+        $admin->save();
+
+        session()->flash('Success', 'Profile updated successfully');
+        return redirect()->back();
     }
 
 

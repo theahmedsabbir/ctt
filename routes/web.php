@@ -44,61 +44,74 @@ Route::get('/student/login', 'Admin\AdminController@showLoginForm')->name('stude
 Route::get('/stuff/login', 'Admin\AdminController@showLoginForm')->name('stuff');
 Route::post('/admin/login', 'Admin\AdminController@login');
 
-Route::group(['middleware' => ['admin', 'check_role']], function(){
+Route::group(['middleware' => ['admin']], function(){
+
 	Route::get('/admin/dashboard', 'Admin\AdminController@dashboard');
 	Route::post('/admin/logout', 'Admin\AdminController@logout');
 
+	Route::group(['middleware' => ['check_role']], function(){
 
-    //=================== Role ========================//
-	Route::get('admin/role/index', 'Admin\RoleController@index');
-	Route::post('admin/role/update/{id}', 'Admin\RoleController@update');
+	    //=================== Role ========================//
+		Route::get('admin/role/index', 'Admin\RoleController@index');
+		Route::post('admin/role/update/{id}', 'Admin\RoleController@update');
 
-    //=================== Department ========================//
-	Route::get('admin/department/index', 'Admin\DepartmentController@index');
-	Route::get('admin/department/create', 'Admin\DepartmentController@create');
-	Route::post('admin/department/store', 'Admin\DepartmentController@store');
-	Route::get('admin/department/edit/{id}', 'Admin\DepartmentController@edit');
-	Route::post('admin/department/update/{id}', 'Admin\DepartmentController@update');
-	Route::get('admin/department/delete/{id}', 'Admin\DepartmentController@destroy');
+	    //=================== Department ========================//
+		Route::get('admin/department/index', 'Admin\DepartmentController@index');
+		Route::get('admin/department/create', 'Admin\DepartmentController@create');
+		Route::post('admin/department/store', 'Admin\DepartmentController@store');
+		Route::get('admin/department/edit/{id}', 'Admin\DepartmentController@edit');
+		Route::post('admin/department/update/{id}', 'Admin\DepartmentController@update');
+		Route::get('admin/department/delete/{id}', 'Admin\DepartmentController@destroy');
 
-    //=================== Teacher ========================//
-	Route::get('admin/teacher/index', 'Admin\TeacherController@index');
-	Route::get('admin/teacher/create', 'Admin\TeacherController@create');
-	Route::post('admin/teacher/store', 'Admin\TeacherController@store');
-	Route::get('admin/teacher/edit/{id}', 'Admin\TeacherController@edit');
-	Route::post('admin/teacher/update/{id}', 'Admin\TeacherController@update');
-	Route::get('admin/teacher/delete/{id}', 'Admin\TeacherController@destroy');
+	    //=================== Teacher ========================//
+		Route::get('admin/teacher/index', 'Admin\TeacherController@index');
+		Route::get('admin/teacher/create', 'Admin\TeacherController@create');
+		Route::post('admin/teacher/store', 'Admin\TeacherController@store');
+		Route::get('admin/teacher/edit/{id}', 'Admin\TeacherController@edit');
+		Route::post('admin/teacher/update/{id}', 'Admin\TeacherController@update');
+		Route::get('admin/teacher/delete/{id}', 'Admin\TeacherController@destroy');
 
-    //=================== Stuff ========================//
-	Route::get('admin/stuff/index', 'Admin\TeacherController@stuff_index');
-	Route::get('admin/stuff/create', 'Admin\TeacherController@stuff_create');
-	Route::post('admin/stuff/store', 'Admin\TeacherController@stuff_store');
-	Route::get('admin/stuff/edit/{id}', 'Admin\TeacherController@stuff_edit');
-	Route::post('admin/stuff/update/{id}', 'Admin\TeacherController@stuff_update');
-	Route::get('admin/stuff/delete/{id}', 'Admin\TeacherController@stuff_destroy');
+	    //=================== Stuff ========================//
+		Route::get('admin/stuff/index', 'Admin\TeacherController@stuff_index');
+		Route::get('admin/stuff/create', 'Admin\TeacherController@stuff_create');
+		Route::post('admin/stuff/store', 'Admin\TeacherController@stuff_store');
+		Route::get('admin/stuff/edit/{id}', 'Admin\TeacherController@stuff_edit');
+		Route::post('admin/stuff/update/{id}', 'Admin\TeacherController@stuff_update');
+		Route::get('admin/stuff/delete/{id}', 'Admin\TeacherController@stuff_destroy');
 
-    //=================== Student ========================//
-	Route::get('admin/student/index', 'Admin\StudentController@index');
-	Route::get('admin/student/create', 'Admin\StudentController@create');
-	Route::post('admin/student/store', 'Admin\StudentController@store');
-	Route::get('admin/student/edit/{id}', 'Admin\StudentController@edit');
-	Route::post('admin/student/update/{id}', 'Admin\StudentController@update');
-	Route::get('admin/student/delete/{id}', 'Admin\StudentController@destroy');
-	Route::post('admin/student/account/{id}', 'Admin\StudentController@accountUpdate');
+	    //=================== Student ========================//
+		Route::get('admin/student/index', 'Admin\StudentController@index');
+		Route::get('admin/student/create', 'Admin\StudentController@create');
+		Route::post('admin/student/store', 'Admin\StudentController@store');
+		Route::get('admin/student/edit/{id}', 'Admin\StudentController@edit');
+		Route::post('admin/student/update/{id}', 'Admin\StudentController@update');
+		Route::get('admin/student/delete/{id}', 'Admin\StudentController@destroy');
+		Route::post('admin/student/account/{id}', 'Admin\StudentController@accountUpdate');
 
-	//=================== Post ========================//
-	Route::get('admin/post/index', 'Admin\FileController@index');
-	Route::get('admin/post/create', 'Admin\FileController@create');
-	Route::post('admin/post/store', 'Admin\FileController@store');
-	Route::get('admin/post/edit/{id}', 'Admin\FileController@edit');
-	Route::post('admin/post/update/{id}', 'Admin\FileController@update');
-	Route::post('admin/post/delete/{id}', 'Admin\FileController@delete');
+		//=================== Post ========================//
+		Route::get('admin/post/index', 'Admin\FileController@index');
+		Route::get('admin/post/create', 'Admin\FileController@create');
+		Route::post('admin/post/store', 'Admin\FileController@store');
+		Route::get('admin/post/edit/{id}', 'Admin\FileController@edit');
+		Route::post('admin/post/update/{id}', 'Admin\FileController@update');
+		Route::post('admin/post/delete/{id}', 'Admin\FileController@delete');
 
-	//=================== Account ========================//
-	Route::get('admin/account/index', 'Admin\AccountController@index');
-	Route::get('admin/account/edit/{id}', 'Admin\AccountController@edit');
-	Route::post('admin/account/update/{id}', 'Admin\AccountController@update');
-	Route::post('admin/account/delete/{id}', 'Admin\AccountController@delete');
+		//=================== Account ========================//
+		Route::get('admin/account/index', 'Admin\AccountController@index');
+		Route::get('admin/account/edit/{id}', 'Admin\AccountController@edit');
+		Route::post('admin/account/update/{id}', 'Admin\AccountController@update');
+		Route::post('admin/account/delete/{id}', 'Admin\AccountController@delete');
+
+	});
+
+
+
+    //=================== Profile ========================//
+	Route::get('/admin/profile/edit', 'Admin\AdminController@profileEdit');
+	Route::post('admin/profile/update/admin/{id}', 'Admin\AdminController@update');
+	Route::post('admin/profile/update/teacher/{id}', 'Admin\TeacherController@update');
+	Route::post('admin/profile/update/student/{id}', 'Admin\StudentController@update');
+	Route::post('admin/profile/update/stuff/{id}', 'Admin\TeacherController@stuff_update');
 
 });
 
